@@ -1,0 +1,20 @@
+select
+  ncodi as codigo,
+  case when ccpf = '' or ccpf is null then ccnpj else ccpf END AS CNPJ_CNPF,
+  case when cidentidade = '' or cidentidade is null then cinscest else cidentidade END AS IE_RG,
+  cnomefant as fantasia,
+  crazaosocial as nome,
+  cendereco as endereco,
+  ccidade as cidade,
+  ccep as cep,
+  cestado as uf,
+  ccontato as contato,
+  ctel as telefone,
+  cfax as fax,
+  cemail as email,
+  cbairro as bairro,
+  ccomplemento as complemento,
+  nnumero as numero,
+  cobservacao as observacoes,
+  ccel as celular
+from fornecedores

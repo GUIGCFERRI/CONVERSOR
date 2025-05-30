@@ -1,0 +1,15 @@
+SELECT MATERIAIS.Material AS CODIGO,
+MATERIAIS.LocalImpressao AS GRUPO,
+MATERIAIS.Tribut_Icms AS ST,
+MATERIAIS.Tribut_Origem AS OST,
+MATERIAIS.classif_fiscal AS COD_NCM,
+MATERIAIS.Grupo AS FAMILIA,
+MATERIAIS.Desc_Material AS DESCRICAO,
+MATERIAIS.Unid_Estoque AS UND,
+MATERIAIS.Preco_Venda,
+MATERIAIS.Custo_Mercadoria_Vendida AS PRECO_CUSTO,
+MATERIAIS.Cadastro AS DATA_CADASTRO,
+MATERIAIS.CodBarra AS BARRAS,
+Estoque_Materiais.Qtde_Estoque AS QTD
+FROM MATERIAIS
+LEFT JOIN Estoque_Materiais ON MATERIAIS.Material=Estoque_Materiais.Material

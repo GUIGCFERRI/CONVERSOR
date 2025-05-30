@@ -1,0 +1,1 @@
+select BetterDesktop.dbo.GrupoProdutosBD.nome as descricao from BetterDesktop.dbo.GrupoProdutosBD

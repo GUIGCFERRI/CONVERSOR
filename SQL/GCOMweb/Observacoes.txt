@@ -1,0 +1,3 @@
+>>> Em futuras conversões revisar o script dos Produtos, principalmente CEST e tributos, pois essa primeira base tem poucos dados;
+
+>>> Comentar o código de cadastro de Clientes, Fornecedores e Produtos se passar de 6 números;

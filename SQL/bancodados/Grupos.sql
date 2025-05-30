@@ -1,0 +1,1 @@
+SELECT GRUPO AS DESCRICAO FROM Bancodados.dbo.Grupos 

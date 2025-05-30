@@ -1,0 +1,1 @@
+Não fiz clientes e fornecedores pois no banco do cliente não tinham informações.

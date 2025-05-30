@@ -1,0 +1,1 @@
+select BDSIC.dbo.Grupos.Gru_descricao as descricao from BDSIC.dbo.Grupos

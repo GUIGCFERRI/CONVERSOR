@@ -1,0 +1,3 @@
+>>> Revisar script de Clientes, Fornecedores e Produtos em futuras conversões, pois essa base inicial tem poucos dados.
+
+>> Executar comando para criar os grupos após conversão.

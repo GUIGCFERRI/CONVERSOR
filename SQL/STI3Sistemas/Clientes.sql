@@ -1,0 +1,22 @@
+select
+clientes.codigo_cliente AS CODIGO,
+clientes.nome,
+clientes.logradouro AS ENDERECO,
+clientes.numero,
+clientes.complemento,
+clientes.bairro,
+clientes.cidade,
+clientes.uf,
+clientes.cep,
+clientes.fone AS TELEFONE,
+clientes.fax,
+clientes.email,
+clientes.contato,
+clientes.cnpj_cpf AS CNPJ_CNPF,
+clientes.insc_rg AS IE_RG,
+clientes.fantasia,
+clientes.celular,
+clientes.obs AS OBSERVACOES,
+clientes.limiteCredito AS LIMITE_CREDITO,
+clientes.estado_civil AS EST_CIVIL
+from clientes

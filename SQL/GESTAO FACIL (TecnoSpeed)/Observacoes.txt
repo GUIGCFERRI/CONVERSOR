@@ -1,0 +1,45 @@
+
+--------SCRIPT ANTIGO----
+ select
+  pessoas.id AS CODIGO,
+  pessoas.CEP AS CEP,
+  pessoas.bairro AS BAIRRO,
+  pessoas.celularPessoal AS CELULAR,
+  pessoas.cidade AS CIDADE,
+  case when pessoas.cnpj ='' then pessoas.cpf else pessoas.cnpj end as CNPJ_CNPF,
+  pessoas.complemento AS COMPLEMENTO,
+  pessoas.contato AS CONTATO,
+  pessoas.dataNascimento AS NASCIMENTO,
+  pessoas.emailPessoal AS EMAIL,
+  pessoas.inscricaoEstadual AS IE_RG,
+  pessoas.inscricaoMunicipal AS IM,
+  pessoas.limite AS LIMITE_CREDITO,
+  pessoas.logradouro AS ENDERECO,
+  pessoas.nome AS NOME,
+  pessoas.nomeFantasia AS FANTASIA,
+  pessoas.numero AS NUMERO,
+  pessoas.observacao AS OBSERVACOES,
+  pessoas.telefoneResidencial AS TELEFONE,
+  pessoas.uf AS UF
+from pessoas 
+
+ SELECT
+  produotos.id AS CODIGO,
+  produotos.codigoCEST AS PERSONAL6,
+  produotos.codigoNCM AS COD_NCM,
+  produotos.dataAlteracao AS ALTERACAO_PRECO,
+  produotos.dataUltimaCompra AS ULTIMA_COMPRA,
+  produotos.estoqueAtual AS QTD,
+  produotos.nome AS DESCRICAO,
+  produotos.observacao AS OBSERVACOES,
+  produotos.percentualComissao AS COMISSAO,
+  produotos.pesoLiquido AS PESO,
+  produotos.referencia AS COD_FAVRICANTE,
+  produotos.valorCusto AS PRECO_CUSTO,
+  produotos.valorVenda AS PRECO_VENDA,
+  GRUPOS.nome AS GRUPO,
+  UNIDADEMEDIDA.descricao AS UND
+from produotos
+LEFT JOIN GRUPOS ON GRUPOS.ID = produotos.idGrupo
+LEFT JOIN UNIDADEMEDIDA ON UNIDADEMEDIDA.id = produotos.idUnidade 
+

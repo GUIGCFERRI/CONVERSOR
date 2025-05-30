@@ -1,0 +1,1 @@
+select MasterVendas.dbo.Grupo.nome as descricao from MasterVendas.dbo.Grupo

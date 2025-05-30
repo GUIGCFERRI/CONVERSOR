@@ -1,0 +1,40 @@
+select
+--   produto.produto_codigo as codigo,
+--    produto.produto_codinterno as cod_fabricante,
+    produto.produto_codinterno as codigo,
+    produto.produto_nome as descricao,
+    produto.produto_codbarras as barras,
+    produto.produto_unidade as und,
+    produto.produto_estoquemin as qtd_ideal,
+    produto.produto_observacao as observacoes,
+    g.grupoproduto_nome as GRUPO, 
+    s.subgrupoproduto_nome as FAMILIA,
+    produto.produto_precocusto as preco_custo,
+    produto.marca_codigo as CARACTERISTICAS, 
+    produto.produto_mlv as MARGEM_LUCRO, 
+    produto.produto_precoavista as PRECO_ATACADO,
+    produto.produto_precominimo as preco_venda, 
+    produto.produto_quantidade as qtd,
+    produto.produto_percomissao as COMISSAO, 
+    produto.produto_situacaotrib as st,
+    produto.produto_peso as peso, 
+    produto.produto_ncm as cod_ncm,
+    produto.produto_data as data_cadastro,
+    produto.produto_cest as personal6,
+    produto.produto_aliquotacofinssaida as COFINS_ALIQ_NOR,
+    produto.situacaotributariacofins_codigo as COFINS_CODIGO,
+    produto.produto_aliquotapissaida  as PIS_ALIQ_NOR,
+    produto.situacaotributariapis_codigo as PIS_CODIGO,
+    produto.produto_aliquotacofinsentrada as COFINSE_ALIQ_NOR,
+    produto.situacaotributariacofinsentrada_codigo as COFINSE_CODIGO,
+    produto.produto_aliquotapisentrada as PISE_ALIQ_NOR,
+    produto.situacaotributariapisentrada_codigo as PISE_CODIGO,
+    produto.situacaotributariaipientrada_codigo as IPI_CODIGO,
+    produto.situacaotributariaipi_codigo as IPI_CODIGO_VENDA,
+    produto.origemmercadoria_saidacodigo as OST,
+    case produto.status_codigo when '1' then 'Ativo' else 'Inativo' end as SITUACAO 
+from produto
+left join grupoproduto g on g.grupoproduto_codigo = produto.grupoproduto_codigo 
+left join subgrupoproduto s on s.subgrupoproduto_codigo = produto.subgrupoproduto_codigo
+where produto.empresa_codigo = '1' -- <<< AJUSTAR AQUI QUANDO TIVER MULTILOJAS 
+and produto.status_codigo = '1'

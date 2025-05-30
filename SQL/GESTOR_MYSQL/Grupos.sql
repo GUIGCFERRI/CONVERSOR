@@ -1,0 +1,2 @@
+select grupos.nome as descricao from grupos
+

@@ -1,0 +1,18 @@
+select sys_fornecedor.for_Codigo as codigo,
+sys_fornecedor.for_nome as nome,
+sys_fornecedor.for_fantasia as fantasia,
+sys_fornecedor.for_endereco as endereco,
+sys_fornecedor.for_complemento as complemento,
+sys_fornecedor.for_bairro as bairro,
+sys_fornecedor.for_cidade as cidade,
+sys_fornecedor.for_estado as uf,
+sys_fornecedor.for_cep as cep,
+sys_fornecedor.for_telefone as telefone,
+sys_fornecedor.for_fax as fax,
+sys_fornecedor.for_celular as celular,
+sys_fornecedor.for_cnpj as cnpj_cnpf,
+sys_fornecedor.for_rgie as ie_rg,
+sys_fornecedor.for_contato as contato,
+sys_fornecedor.for_email as email,
+sys_fornecedor.for_numero as numero
+from sys_fornecedor

@@ -1,0 +1,2 @@
+*** Sem Dados de Fornecedores e Grupos para Implementação.
+*** Itens do Estoque, sem"ST, Preço de custo, Custo Médio, NCM e CEST".

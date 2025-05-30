@@ -1,0 +1,1 @@
+SELECT CADCAT.nomcat AS DESCRICAO FROM cadcat;

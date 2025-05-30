@@ -1,0 +1,22 @@
+select clientes.codigo,
+clientes.nome,
+clientes.`conjuge`,
+clientes.pai,
+clientes.`mae`,
+clientes.apelido as fantasia,
+clientes.`endereco`,
+clientes.cep,
+clientes.bairro,
+clientes.cidade,
+clientes.`estado` as uf,
+case when clientes.`cnpj`='' then clientes.`cpf`
+else clientes.cnpj end as cnpj_cnpf,
+clientes.`inscricao` as ie_rg,
+clientes.`observacao` as observacoes,
+clientes.telefone,
+clientes.fax,
+clientes.`celular`,
+clientes.`datacadastro` as data_cadastro,
+clientes.`email`,
+clientes.`numero`
+from clientes

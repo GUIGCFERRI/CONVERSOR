@@ -1,0 +1,1 @@
+SELECT grupo_produto_servico.nome AS DESCRICAO FROM grupo_produto_servico

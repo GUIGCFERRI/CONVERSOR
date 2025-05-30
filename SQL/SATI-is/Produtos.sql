@@ -1,0 +1,14 @@
+SELECT
+    ITEM.coditem AS CODIGO,
+    GRUPO.DESCRICAO AS GRUPO,
+    ITEM.unidade AS UND,
+    ITEM.saldo AS QTD,
+    ITEM.custo AS PRECO_CUSTO,
+    ITEM.descricao,
+    ITEM.codfabricante AS COD_FABRICANTE,
+    ITEM.precovenda AS PRECO_VENDA,
+    ITEM.ncm AS COD_NCM,
+    ITEM.codbarra AS BARRAS
+    FROM ITEM
+LEFT JOIN GRUPO ON ITEM.CODGRUPO = GRUPO.CODGRUPO
+WHERE ITEM.CODITEM > 0

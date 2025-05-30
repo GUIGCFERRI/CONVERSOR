@@ -1,0 +1,1 @@
+select G.descricao FROM grupo G

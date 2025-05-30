@@ -1,0 +1,1 @@
+SELECT store.dbo.grupoproduto.descricao as Descricao from store.dbo.GrupoProduto

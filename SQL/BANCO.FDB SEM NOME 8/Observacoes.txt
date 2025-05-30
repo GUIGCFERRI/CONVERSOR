@@ -1,0 +1,1 @@
+Base bem complicada para pegar preços, telefones e e-mails, tem que ajustar os scripts para a base que vier para aproveitar o máximo de registros

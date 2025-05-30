@@ -1,0 +1,17 @@
+select fornecedores.CODFORNEC as codigo,
+fornecedores.RAZAO as nome,
+fornecedores.FANTASIA,
+fornecedores.ENDERECO,
+fornecedores.cidade,
+fornecedores.ESTADO as uf,
+fornecedores.BAIRRO,
+fornecedores.NUMERO,
+fornecedores.CEP,
+fornecedores.COMPLEMENTO,
+fornecedores.CNPJ_CPF as cnpj_cnpf,
+fornecedores.TELEFONE,
+fornecedores.FAX,
+fornecedores.EMAIL,
+fornecedores.CONTATO,
+fornecedores.IE as ie_rg
+from fornecedores

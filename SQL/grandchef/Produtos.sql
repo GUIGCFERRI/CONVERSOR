@@ -1,0 +1,12 @@
+select 
+PRODUTOS.id AS CODIGO,
+PRODUTOS.CodigoBarras AS BARRAS,
+CATEGORIAS.`Descricao` AS GRUPO,
+unidades.`Sigla` AS UND,
+PRODUTOS.Descricao AS DESCRICAO,
+PRODUTOS.Estoque as qtd,
+PRODUTOS.CustoMedio as custo_medio,
+PRODUTOS.PrecoVenda AS PRECO_VENDA
+FROM PRODUTOS
+LEFT JOIN UNIDADES ON `unidades`.`ID` = `produtos`.`UnidadeID`
+LEFT JOIN CATEGORIAS ON CATEGORIAS.`ID` = PRODUTOS.`SetorEstoqueID`

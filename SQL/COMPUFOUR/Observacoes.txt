@@ -1,0 +1,131 @@
+>>> Só converte o RECEBER e PAGAR em aberto.
+
+select
+                       tei.id_estoque as CODIGO,
+                       tei.id_identificador  as cod_fabricante,
+                       T3.cod_barra as BARRAS,
+                       T1.descricao as DESCRICAO,
+                       T1.uni_medida as UND,
+                       T2.descricao as GRUPO,
+                       COALESCE(T3.peso, 0) as PESO,
+                       COALESCE(T3.qtd_atual, 0) as QTD,
+                       COALESCE(T3.qtd_minim, 0) as QTD_IDEAL,
+                       COALESCE(T1.prc_custo, 0) as PRECO_CUSTO,
+                       T1.margem_lb as MARGEM_LUCRO,
+                       COALESCE(T1.prc_venda, 0) as PRECO_VENDA,
+                       COALESCE(substring(T3.cst from 1 for 1), 0) as OST,
+                       COALESCE(''||SUBSTRING(TRIM(T3.cst) FROM 2 FOR 2),  00) as ST,
+                       T3.cf as CF,
+                       COALESCE(T3.ipi, 0) as ALIQ_IPI_VENDA,
+                       substring(COALESCE(T1.cst_pis, '')from 1 for 2) as PIS_CODIGO,
+                       COALESCE(T1.pis, 0) as PIS_ALIQ_NOR,
+                       substring(COALESCE(T1.cst_cofins, '') from 1 for 2) as COFINS_CODIGO,
+                       COALESCE(T1.cofins, 0) as COFINS_ALIQ_NOR,
+                       T1.ult_venda as ULTIMA_VENDA,
+                       T1.dt_cadast as DATA_CADASTRO,
+                       T3.cod_ncm as COD_NCM,
+                       T3.ippt as IPPT,
+                       T3.cod_cest as PERSONAL6,
+                       --t3.referencia as cod_fabricante,
+                       substring(t1.observacao from 1 for 1000) as observacoes
+                       from tb_estoque T1
+                       inner join tb_est_identificador tei on t1.id_estoque = tei.id_estoque
+                       left join tb_est_grupo T2 on T1.id_grupo = T2.id_grupo
+                       left join tb_est_produto T3 on tei.Id_identificador = T3.id_identificador
+                       order by CODIGO;
+----------------------------------------------------------------------
+
+select
+                       --tei.id_estoque as CODIGO,
+                       tei.id_identificador as CODIGO,
+                       T3.cod_barra as BARRAS,
+                       T1.descricao as DESCRICAO,
+                       T1.uni_medida as UND,
+                       T2.descricao as GRUPO,
+                       COALESCE(T3.peso, 0) as PESO,
+                       COALESCE(T3.qtd_atual, 0) as QTD,
+                       COALESCE(T3.qtd_minim, 0) as QTD_IDEAL,
+                       COALESCE(T1.prc_custo, 0) as PRECO_CUSTO,
+                       T1.margem_lb as MARGEM_LUCRO,
+                       COALESCE(T1.prc_venda, 0) as PRECO_VENDA,
+                       COALESCE(substring(T3.cst from 1 for 1), 0) as OST,
+                       COALESCE(''||SUBSTRING(TRIM(T3.cst) FROM 2 FOR 2),  00) as ST,
+                       T3.cf as CF,
+                       COALESCE(T3.ipi, 0) as ALIQ_IPI_VENDA,
+                       substring(COALESCE(T1.cst_pis, '')from 1 for 2) as PIS_CODIGO,
+                       COALESCE(T1.pis, 0) as PIS_ALIQ_NOR,
+                       substring(COALESCE(T1.cst_cofins, '') from 1 for 2) as COFINS_CODIGO,
+                       COALESCE(T1.cofins, 0) as COFINS_ALIQ_NOR,
+                       T1.ult_venda as ULTIMA_VENDA,
+                       T1.dt_cadast as DATA_CADASTRO,
+                       T3.cod_ncm as COD_NCM,
+                       T3.ippt as IPPT,
+                       T3.cod_cest as PERSONAL6,
+                       t3.referencia as cod_fabricante,
+                       substring(t1.observacao from 1 for 1000) as observacoes
+                       from tb_estoque T1
+                       inner join tb_est_identificador tei on t1.id_estoque = tei.id_estoque
+                       left join tb_est_grupo T2 on T1.id_grupo = T2.id_grupo
+                       left join tb_est_produto T3 on tei.Id_identificador = T3.id_identificador
+                       order by CODIGO;
+
+
+-------------------------------------------------------------------------------------
+
+select
+                       cli.id_cliente "CODIGO",
+                       cli.nome "NOME",
+                       pj.nome_fanta "FANTASIA",
+                       cli.contato "CONTATO",
+                       pf.cpf "CNPJ_CNPF",
+                       pf.identidade "IE_RG",
+                       cli.end_lograd "ENDERECO",
+                       cli.end_numero "NUMERO",
+                       cli.end_comple "COMPLEMENTO",
+                       cli.end_bairro "BAIRRO",
+                       tb_cidade_sis.nome "CIDADE",
+                       tb_cidade_sis.sigla_uf "UF",
+                       cli.end_cep "CEP",
+                       cli.ddd_resid||''''||cli.fone_resid "TELEFONE",
+                       cli.ddd_celul||''''||cli.fone_celul "CELULAR",
+                       cli.ddd_fax||''''||cli.fone_fax "FAX",
+                       cli.email_cont "EMAIL",
+                       cli.limite "LIMITE_CREDITO",
+                       pf.dt_nascto "NASCIMENTO",
+                       ca.adicional1 "PERSONAL2",
+                       ca.adicional2 "PERSONAL3",
+                       substring(cli.observacao from 1 for 1000) as observacoes
+                       from tb_cliente cli
+                       left join tb_cli_adicional ca on cli.id_cliente = ca.id_cliente
+                       left join tb_cli_pf pf on cli.id_cliente = pf.id_cliente
+                       left join tb_cli_pj pj on cli.id_cliente = pj.id_cliente
+                       left join tb_cidade_sis on tb_cidade_sis.id_cidade = cli.id_cidade
+                       where cli.id_cliente = pf.id_cliente and pf.cpf <> '''' or pf.identidade <> ''''
+                       union
+                       select cli.id_cliente "CODIGO",
+                       cli.nome "NOME",
+                       pj.nome_fanta "FANTASIA",
+                       cli.contato "CONTATO",
+                       pj.cnpj "CNPJ_CNPF",
+                       pj.insc_estad "IE_RG",
+                       cli.end_lograd "ENDERECO",
+                       cli.end_numero "NUMERO",
+                       cli.end_comple "COMPLEMENTO",
+                       cli.end_bairro "BAIRRO",
+                       sis.nome "CIDADE",
+                       sis.sigla_uf "UF",
+                       cli.end_cep "CEP",
+                       cli.ddd_resid||''''||cli.fone_resid "TELEFONE",
+                       cli.ddd_celul||''''||cli.fone_celul "CELULAR",
+                       cli.ddd_fax||''''||cli.fone_fax "FAX",
+                       cli.email_cont "EMAIL",
+                       cli.limite "LIMITE_CREDITO",
+                       cli.dt_cadastro "CADASTRO",
+                       ca.adicional1 "PERSONAL2",
+                       ca.adicional2 "PERSONAL3",
+                       substring(cli.observacao from 1 for 1000) as observacoes
+                       from tb_cliente cli
+                       left join tb_cli_adicional ca on cli.id_cliente = ca.id_cliente
+                       left join tb_cli_pj pj on cli.id_cliente = pj.id_cliente
+                       left join tb_cidade_sis sis on sis.id_cidade = cli.id_cidade
+                       where pj.id_cliente = cli.id_cliente

@@ -1,0 +1,1 @@
+>>> Base com pucos dados e fragmentada em várias tabelas, favor revisar todos os script em futuras conversões.

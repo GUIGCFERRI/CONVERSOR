@@ -1,0 +1,28 @@
+ select
+ cast(registro as integer) as codigo,
+ nome,
+ contato,
+ cgc as CNPJ_CNPF,
+ ie as IE_RG,
+ endere as ENDERECO,
+ comple as BAIRRO,
+ substring(cidade from 1 for 35) as cidade,
+ estado as UF,
+ REPLACE (Cep, '-' , '') AS CEP,
+ fone as TELEFONE,
+ celular,
+ fax,
+ email,
+ OBS AS observacoes,
+ CREDITO AS LIMITE_CREDITO,
+ identificador1 as PERSONAL1,
+ identificador2 as PERSONAL2,
+ identificador3 as PERSONAL3,
+ identificador4 as PERSONAL4,
+ identificador5 as PERSONAL5,
+ WHATSAPP AS PERSONAL6,
+ datanas as NASCIMENTO,
+ case when cadastro is null then current_date else cadastro end as cadastro,
+ ultimaco as ULTIMA_VENDA
+ from clifor
+ where nome <> '''' and nome is not null and clifor <> 'Fornecedor' or clifor is null

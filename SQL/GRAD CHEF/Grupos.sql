@@ -1,0 +1,1 @@
+select descricao AS DESCRICAO FROM CATEGORIAS

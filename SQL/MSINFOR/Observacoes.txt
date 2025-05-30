@@ -1,0 +1,2 @@
+>>> Orientar revenda conferir QUANTIDADE, CUSTO e PREÇO DE VENDA, podem não estar certos
+>>> Produtos com mais de um código de barras (tabela CEProC)

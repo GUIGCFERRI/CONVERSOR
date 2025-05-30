@@ -1,0 +1,16 @@
+SELECT
+    TBFORNECEDOR.CODIGO AS CODIGO,
+    TBFORNECEDOR.razaosocial AS NOME,
+    TBFORNECEDOR.fantasia AS FANTASIA,
+    TBFORNECEDOR.contato AS CONTATO,
+    case when CPF = '' or CPF is null then cnpj else CPF END AS CNPJ_CNPF,
+    tbfornecedor.IE as ie_rg,
+    TBFORNECEDOR.ENDERECO AS ENDERECO,
+    --TBFORNECEDOR.COMPLEMENTO AS COMPLEMENTO,
+    TBFORNECEDOR.BAIRRO AS BAIRRO,
+    TBFORNECEDOR.numero AS NUMERO,
+    TBFORNECEDOR.CEP AS CEP,
+    TBFORNECEDOR.CIDADE AS CIDADE,
+    tbfornecedor.uf as uf,
+    tbfornecedor.telefone as telefone
+FROM TBFORNECEDOR

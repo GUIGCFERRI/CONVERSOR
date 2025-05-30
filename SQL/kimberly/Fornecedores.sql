@@ -1,0 +1,15 @@
+select cad_fornecedores.id as codigo,
+cad_fornecedores.`nome_fornecedor` as nome,
+cad_fornecedores.cep,
+cad_fornecedores.`endereco`,
+cad_fornecedores.bairro,
+cad_fornecedores.cidade,
+cad_fornecedores.uf,
+cad_fornecedores.email,
+cad_fornecedores.telefone,
+cad_fornecedores.fax,
+cad_fornecedores.`cpf_cnpj` as cnpj_cnpf,
+cad_fornecedores.`rg_ie` as ie_rg,
+cad_fornecedores.contato,
+cad_fornecedores.`inf_adicional` as observacoes
+from cad_fornecedores

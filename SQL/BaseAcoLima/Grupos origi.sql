@@ -1,0 +1,1 @@
+SELECT [BaseAcoLima].[dbo].[grp].GRP_DESCRI AS DESCRICAO FROM [BaseAcoLima].[dbo].[grp]

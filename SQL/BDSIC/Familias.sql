@@ -1,0 +1,1 @@
+select BDSIC.dbo.Casubgrupos.Cas_descricao as descricao from BDSIC.dbo.Casubgrupos

@@ -1,0 +1,28 @@
+SELECT PESSOA.codigo,
+PESSOA.NOME, 
+pessoa.nome_reduzido AS FANTASIA,
+PESSOA.endereco,
+PESSOA.bairro, 
+PESSOA.cidade, 
+PESSOA.cep,
+PESSOA.estado AS UF,
+PESSOA.fone AS TELEFONE,
+PESSOA.fax,
+PESSOA.celular,
+PESSOA.cpf AS CNPJ_CNPF,
+pessoa.inscr_est AS IE_RG,
+pessoa.email,
+pessoa.contato,
+pessoa.endereco_c AS COB_ENDERECO,
+PESSOA.bairro_c AS COB_BAIRRO,
+PESSOA.cidade_c AS COB_CIDADE,
+PESSOA.cep_c AS COB_CEP,
+pessoa.estado_c AS COB_UF,
+PESSOA.data_cad AS CADASTRO,
+PESSOA.obs AS OBSERVACOES,
+PESSOA.numero,
+PESSOA.complemento
+FROM PESSOA 
+WHERE PESSOA.tipo = 'F'
+
+

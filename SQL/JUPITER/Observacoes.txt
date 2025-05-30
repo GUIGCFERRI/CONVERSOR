@@ -1,0 +1,1 @@
+Firebird 3.0 sql pronto para gerar inserts mas não achei o CEST dos produtos

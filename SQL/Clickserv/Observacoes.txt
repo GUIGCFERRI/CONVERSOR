@@ -1,0 +1,4 @@
+SENHA DO BANCO: acesse2006
+
+
+>>> Revisar script de Cliente e Fornecedores em futuras conversões;

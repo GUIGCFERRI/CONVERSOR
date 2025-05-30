@@ -1,0 +1,3 @@
+*** NA CONVERSÃO DE PAGAR E RECEBER, O QUE NÃO TIVER CPF\CNPJ NÃO VAI CONVERTER (AJUSTADO NOS SCRIPTS)
+
+*** Se o Cliente não tem CNPJ/CPF, ao converter o RECEBER, vai vincular o primeiro cliente da listagem, devendo ajustar depois manualmente.

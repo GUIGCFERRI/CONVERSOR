@@ -1,0 +1,17 @@
+select BCOFOR.codigo,
+BCOFOR.razao as nome,
+BCOFOR.endereco,
+BCOFOR.bairro,
+BCOFOR.cep,
+BCOFOR.cidade,
+BCOFOR.uf,
+BCOFOR.fone as telefone,
+BCOFOR.fax,
+BCOFOR.contato,
+BCOFOR.email,
+BCOFOR.observacao as observacoes,
+BCOFOR.complementoendereco as complemento,
+BCOFOR.documento as cnpj_cnpf,
+BCOFOR.inscricaoest as ie_rg,
+BCOFOR.numero
+from BCOFOR

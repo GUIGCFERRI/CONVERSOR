@@ -1,0 +1,21 @@
+select
+  cg2_cod as codigo,
+  cg2_nome as nome,
+  cg2_fantasia as fantasia,
+  cg2_contato as contato,
+  case when cg2_cpf = '' or cg2_cpf is null then cg2_cgc else cg2_cpf END AS CNPJ_CNPF,
+  case when cg2_rg = '' or cg2_rg is null then cg2_inscestad else cg2_rg END AS IE_RG,
+  cg2_inscmunicipal as im,
+  cg2_end as endereco,
+  cg2_numero as numero,
+  cg2_compl as complemento,
+  cg2_bairro as bairro,
+  cg2_cep as cep,
+  cg2_cidade as cidade,
+  cg2_uf as uf,
+  cg2_fone as telefone,
+  cg2_fone1 as celular,
+  cg2_fax as fax,
+  CG2_EMail as email,
+  case when cg2_ativo = '1' then 'Ativo' else 'Inativo' end as SITUACAO
+from cg2

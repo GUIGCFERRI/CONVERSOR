@@ -1,0 +1,6 @@
+>>> Comentar a linha do P.CODLIN AS CODIGO caso necessário, pois pode gerar registros repetidos com tamanhos diferentes;
+
+>>> Revisar script do estoque em futuras conversões;
+
+>>> Nome da base muda em cada cliente;
+

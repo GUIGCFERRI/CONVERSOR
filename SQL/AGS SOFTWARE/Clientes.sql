@@ -1,0 +1,21 @@
+select
+    CODI_CLI as codigo,
+    NOME_CLI as nome,
+    FANT_CLI as fantasia,
+    ENDE_CLI as endereco,
+    CIDA_CLI as cidade,
+    BAIR_CLI as bairro,
+    UF00_CLI as uf,
+    CEP0_CLI as cep,
+    FONE_CLI as telefone,
+    FON1_CLI as celular,
+    CGC0_CLI as CNPJ_CNPF,
+    IE00_CLI as IE_RG,
+    OBS0_CLI as OBSERVACAO,
+    LIMITE   as limite,
+    EMAI_CLI as email,
+    ENDN_CLI as numero,
+    DINICIO  as cadastro,
+    DATANASC as NASCIMENTO,
+    CONJUGE  as CONJUGE
+    from CLI000

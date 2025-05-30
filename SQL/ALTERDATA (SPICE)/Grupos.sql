@@ -1,0 +1,1 @@
+select G.DSGRUPO as DESCRICAO from SPICE.GRUPOS G

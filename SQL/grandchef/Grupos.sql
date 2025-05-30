@@ -1,0 +1,1 @@
+select `categorias`.`Descricao` from categorias

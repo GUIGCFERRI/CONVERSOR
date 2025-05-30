@@ -1,0 +1,1 @@
+*** Ajustar conforme necessidade especifica de "Filial (where saldoestoque.idfilial = '2')".

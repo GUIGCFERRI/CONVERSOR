@@ -1,0 +1,2 @@
+SELECT `cadgrupo`.`Grupo` AS DESCRICAO
+FROM CADGRUPO

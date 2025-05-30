@@ -1,0 +1,22 @@
+SELECT
+    MATERIAIS.mat_001 AS CODIGO,
+    MATERIAIS.mat_003 AS DESCRICAO,
+    setor_estoque_material.quantidade as qtd,
+    UNIDADES.UNI_003 AS UND,
+    MATERIAIS.mat_004 AS BARRAS,
+    MATERIAIS.mat_012 AS PRECO_CUSTO,
+    MATERIAIS.mat_008 AS PRECO_VENDA,
+    MATERIAIS.pis_codigo_saida AS PIS_CODIGO,
+    MATERIAIS.cof_codigo_saida AS COFINS_CODIGO,
+    MATERIAIS.ncm AS COD_NCM,
+    MATERIAIS.cso_codigo AS ST,
+    MATERIAIS.sit_001 = '4', 'Ativo' AS SITUACAO,
+ --MATERIAIS.sit_001 = '3', 'Inativo' AS SITUACAO,
+    MATERIAIS.REFERENCIA AS COD_FABRICANTE,
+    MATERIAIS.cest AS PERSONAL6
+FROM MATERIAIS
+LEFT JOIN UNIDADES ON MATERIAIS.UNI_001 = UNIDADES.UNI_001
+LEFT JOIN setor_estoque_material ON setor_estoque_material.id_material = MATERIAIS.mat_001
+where MATERIAIS.sit_001 <> '3' ---INATIVO
+--where MATERIAIS.sit_001 <> '4' ---ATIVO
+ORDER BY 1

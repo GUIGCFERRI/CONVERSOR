@@ -1,0 +1,21 @@
+SELECT
+  codfor AS CODIGO,
+  nomfor AS NOME,
+  razfor AS FANTASIA,
+  contato AS CONTATO,
+  COALESCE(cgcfor, cpffor) AS CNPJ_CNPF,
+  COALESCE(insfor, xinsfor) AS IE_RG,
+  inscrm AS IM,
+  endfor AS ENDERECO,
+  numendfor AS NUMERO,
+  comple AS COMPLEMENTO,
+  baifor AS BAIRRO,
+  munfor AS CIDADE,
+  estfor AS UF,
+  cepfor AS CEP,
+  fonfor AS TELEFONE,
+  celfor AS CELULAR,
+  faxfor AS FAX,
+  email AS EMAIL,
+  obsfor AS OBSERVACOES
+FROM public.arqfor;

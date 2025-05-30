@@ -1,0 +1,27 @@
+SELECT
+    CLIENTE.cod_cliente AS CODIGO,
+    CLIENTE.raz_cliente AS NOME,
+    CLIENTE.fan_cliente AS FANTASIA,
+    CLIENTE.end_cliente AS ENDERECO,
+    CLIENTE.bai_cliente AS BAIRRO,
+    CLIENTE.cep_cliente AS CEP,
+    CIDADE.NOM_CIDADE AS CIDADE,
+    CLIENTE.cod_estado AS UF,
+    CLIENTE.num_fone AS TELEFONE,
+    CLIENTE.num_fax AS FAX,
+    CLIENTE.email AS EMAIL,
+    CLIENTE.num_celular AS CELULAR,
+    CLIENTE.observacao AS OBSERVACOES,
+    CLIENTE.cpf_cgc AS CNPJ_CNPF,
+    CLIENTE.rg_inscr AS IE_RG,
+    CLIENTE.nom_contato AS CONTATO,
+    CLIENTE.end_complemento AS COMPLEMENTO,
+    CLIENTE.nom_pai AS PAI,
+    CLIENTE.nom_mae AS MAE,
+    CLIENTE.dat_nascto AS NASCIMENTO,
+    CLIENTE.est_civil AS EST_CIVIL,
+    CLIENTE.sexo AS SEXO,
+    CLIENTE.nom_conjuge AS CONJUGE,
+    CLIENTE.vlr_limite AS LIMITE_CREDITO
+FROM CLIENTE
+LEFT JOIN CIDADE ON CIDADE.COD_CIDADE = CLIENTE.COD_CIDADE

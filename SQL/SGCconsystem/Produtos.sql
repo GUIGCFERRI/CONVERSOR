@@ -1,0 +1,21 @@
+select
+	codpro as COD_FABRICANTE,
+	nompro as DESCRICAO,
+	unipro as UND,
+	estatu as QTD,
+	precus as PRECO_CUSTO,
+	preven as PRECO_VENDA,
+	ultcom as ULTIMA_COMPRA,
+	ultven as ULTIMA_VENDA,
+	numfab as BARRAS,
+	obs as OBSERVACOES,
+	icms as ELO,
+	aplica as PERSONAL1,
+	nommar as FAMILIA,
+	nomgru as GRUPO,
+	codncm as COD_NCM,
+	tabipi as IPI_CODIGO,
+	tabpis as PIS_CODIGO,
+	tabcofins as COFINS_CODIGO,
+	codcest as PERSONAL6
+from public.arqest

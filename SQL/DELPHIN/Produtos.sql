@@ -1,0 +1,20 @@
+select
+  codigo as codigo,
+  descricao as descricao,
+  codigofornecedor as barras,
+  unidade as und,
+  minimo as qtd_ideal,
+  saldo as qtd,
+  peso as peso,
+  grupo as grupo,
+  fornecedor as fornecedor,
+  precocusto as preco_custo,
+  customedio as custo_medio,
+  margemlucro as margem_lucro,
+  precovenda as preco_venda,
+  precorevenda as preco_atacado,
+  tributaria as st,
+  observacao as observacoes,
+  NCM as cod_ncm,
+  CEST as personal6
+from estoque

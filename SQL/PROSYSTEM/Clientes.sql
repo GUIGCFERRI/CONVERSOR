@@ -1,0 +1,28 @@
+SELECT
+  cliente.codigo AS CODIGO,
+  cliente.nome AS NOME,
+  cliente.cep AS CEP,
+  cliente.endereco AS ENDERECO,
+  cliente.numero AS NUMERO,
+  cliente.complemento AS COMPLEMENTO,
+  cliente.bairro AS BAIRRO,
+  cliente.cidade AS CIDADE,
+  CONCAT (cliente.ddd, ' ' ,cliente.telefone1) AS TELEFONE,
+  CONCAT (cliente.ddd_celular, ' ' ,cliente.celular) AS CELULAR,
+  CONCAT (cliente.ddd, ' ' ,cliente.fax) AS FAX,
+  cliente.uf AS UF,
+  cliente.mae AS MAE,
+  cliente.pai AS PAI,
+  cliente.sexo AS SEXO,
+  case when cliente.cpf = '' or cliente.cpf is null then cliente.cnpj else cliente.cpf END as CNPJ_CNPF,
+  case when cliente.identidade = '' or cliente.identidade is null then cliente.inscricao else cliente.identidade END as IE_RG,
+  cliente.estado_civil AS EST_CIVIL,
+  cliente.conjuge AS CONJUGE,
+  cliente.profissao AS PROFISSAO,
+  cliente.cadastro AS CADASTRO,
+  cliente.e_mail AS EMAIL,
+  cliente.limite_credito AS LIMITE_CREDITO,
+  cliente.contato AS CONTAO,
+  cliente.nome_fantasia AS FANTASIA
+  -- cliente.obs AS OBSERVACOES
+FROM cliente

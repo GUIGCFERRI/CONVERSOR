@@ -1,0 +1,1 @@
+>> A primeira base não tem Fornecedores e não dá para saber exatamente como filtram isso da tabela "tab_parc". Em futuras conversões ajustar script PARA FILTRAR SÓ FORNECEDORES

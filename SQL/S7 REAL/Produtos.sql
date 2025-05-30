@@ -1,0 +1,12 @@
+SELECT PRODUTOS.[Código] AS CODIGO ,
+CLASSES.Nome AS GRUPO,
+Produtos.Nome AS DESCRICAO,
+PRODUTOS.Unidade_Venda AS UND,
+Estoque_Atual.Estoque_Atual AS QTD,
+PRODUTOS.[Preço1] AS PRECO_VENDA,
+Produtos.Custo1 AS PRECO_CUSTO
+FROM PRODUTOS
+LEFT JOIN CLASSES ON PRODUTOS.Classe = CLASSES.[Código]
+LEFT JOIN Estoque_Atual ON PRODUTOS.[Código] = Estoque_Atual.Produto
+WHERE PRODUTOS.[Código] >0
+

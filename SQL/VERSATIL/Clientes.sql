@@ -1,0 +1,25 @@
+SELECT
+    CLIENTES.COD_CLIENTE AS CODIGO,
+    CLIENTES.NOME AS NOME,                        
+    CLIENTES.RAZAO AS FANTASIA,                      
+    CLIENTES.ENDERECO AS ENDERECO,
+    CLIENTES.BAIRRO AS BAIRRO,
+    CLIENTES.FONE AS TELEFONE,                   
+    CLIENTES.CELULAR AS CELULAR,                     
+    CLIENTES.CNPJ_CGC AS CNPJ_CNPF,                   
+    CLIENTES.IE_RG AS IE_RG,                       
+    CLIENTES.CEP AS CEP,                         
+    CLIENTES.NASCIMENTO AS NASCIMENTO,                  
+    CLIENTES.PROFISSAO AS PROFISSAO,                   
+    CLIENTES.EMAIL AS EMAIL,                       
+    --CLIENTES.DATCADASTRO AS CADASTRO,
+    CLIENTES.OBS AS OBSERVACOES,                         
+    CLIENTES.PAI AS PAI,                        
+    CLIENTES.MAE AS MAE,                         
+    CIDADE.NOM_CIDADE AS CIDADE,                   
+    CLIENTES.NUMERO_ENDERECO AS NUMERO,           
+    CLIENTES.COMPLEMENTO AS COMPLEMENTO,                
+    CLIENTES.FAX AS FAX,                          
+    CLIENTES.CONTATO
+FROM CLIENTES
+LEFT JOIN CIDADE ON CLIENTES.COD_CIDADE = CIDADE.COD_CIDADE

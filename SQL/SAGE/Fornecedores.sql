@@ -1,0 +1,18 @@
+select cadfor.codfor as codigo,
+cadfor.FANT as fantasia,
+cadfor.RAZAO_SOC as nome,
+cadfor.CONTATO,
+cadfor.ENDERECO,
+cadfor.BAIRRO,
+cadfor.CIDADE,
+cadfor.uf,
+cadfor.CEP,
+cadfor.TELEF as telefone,
+cadfor.FAX,
+cadfor.email,
+case when cadfor.CGC='' then cadfor.cpf else cadfor.cgc end as cnpj_cnpf,
+case when cadfor.INS_EST='' then cadfor.rg else cadfor.INS_EST end as ie_rg,
+cadfor.obs as observacoes,
+cadfor.END_COMPL as complento,
+cadfor.NUMERO
+from cadfor

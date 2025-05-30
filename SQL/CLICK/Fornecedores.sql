@@ -1,0 +1,19 @@
+SELECT
+       ID AS CODIGO
+      ,RAZAO_SOCIAL AS NOME
+      ,FANTASIA AS FANTASIA
+      ,CNPJ_CPF AS CNPJ_CNPF
+      ,LOGRADOURO AS ENDERECO
+      ,NUMERO
+      ,COMPLEMENTO
+      ,CEP
+      ,BAIRRO
+      ,CIDADE
+      ,UF
+      ,FONE1 AS TELEFONE
+      ,FAX
+      ,CELULAR
+      ,INSCRICAO_ESTADUAL AS IE_RG
+      ,CONTATO
+      ,EMAIL
+  FROM click.dbo.FORNECEDOR

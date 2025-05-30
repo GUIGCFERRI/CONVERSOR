@@ -1,0 +1,1 @@
+select GCOM.dbo.MC_SubGrupo.Nome as descricao from GCOM.dbo.MC_SubGrupo

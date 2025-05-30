@@ -1,0 +1,1 @@
+select grupos.nomgru as descricao from grupos

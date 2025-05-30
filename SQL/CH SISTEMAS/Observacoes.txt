@@ -1,0 +1,4 @@
+User - NXPLUS0704
+Senha - masterkey
+
+*** WHERE CHAVEEMPRESA = '1' ----VERIFICARCHAVE EMPRESA

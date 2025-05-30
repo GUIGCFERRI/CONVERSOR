@@ -1,0 +1,1 @@
+SELECT [BaseLaBelleForMen].[dbo].[grp].[GRP_DESCRI] AS DESCRICAO FROM [BaseLaBelleForMen].[dbo].[grp]

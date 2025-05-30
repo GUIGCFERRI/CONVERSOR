@@ -1,0 +1,20 @@
+   SELECT
+    id_fornec AS CODIGO,
+    nome AS NOME,
+    endereco AS ENDERECO,
+    bairro AS BAIRRO,
+    cidade AS CIDADE,
+    uf AS UF,
+    cep AS CEP,
+    tel_fixo AS TELEFONE,
+    celular AS CELULAR,
+    fax AS FAX,
+    email AS EMAIL,
+    numero AS NUMERO,
+    cnpj AS CNPJ_CNPF,
+    ie AS IE_RG,
+    contato AS CONTATO,
+    nome_fantasia AS FANTASIA,
+    obs AS OBSERVACOES,
+    complemento AS COMPLEMENTO
+    FROM FORNECEDOR_TABLE

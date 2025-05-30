@@ -1,0 +1,1 @@
+>> Verificar o select para identificar a QUANTIDADE do produtos em futuras conversões, base atual não tem essa informação.

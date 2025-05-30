@@ -1,0 +1,1 @@
+>>> Caso precise dos códigos adicionais de fornecedores, estão na tabela prod12. Exportar e importar via .CSV

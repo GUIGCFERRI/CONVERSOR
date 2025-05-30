@@ -1,0 +1,26 @@
+SELECT
+    produto.codigo as cod_fabricante, 
+    PRODUTO.codigo_barra as barras,
+    PRODUTO.nome as descricao,
+    grupo_produto.nome as grupo,
+    PRODUTO.unid_med as und,
+    PRODUTO.tributacao as st,
+    PRODUTO.comissao as comissao,
+    PRODUTO.preco_unit as preco_venda,
+    PRODUTO.preco_custo as preco_custo,
+    PRODUTO.margem_lucro as margem_lucro,
+    PRODUTO.data_cad as data_cadastro,
+    PRODUTO.unid_med_entrada as und_compra,
+    PRODUTO.qtde_unid_entrada AS FAT_CONV,
+    PRODUTO.codigo_ncm as cod_ncm,
+    PRODUTO.cst_pis as pis_codigo,
+    PRODUTO.cst_cofins as cofins_codigo,
+    PRODUTO.cst_pis_entrada as pise_codigo,
+    PRODUTO.cst_cofins_entrada as cofinse_codigo,
+    PRODUTO.aliquota_ipi as aliq_ipi_venda,
+    PRODUTO.cst_ipi_entrada as ipi_codigo,
+    PRODUTO.cst_ipi_saida as ipi_codigo_venda,
+    PRODUTO.cest as personal6,
+    PRODUTO.ult_alteracao as alteracao_preco
+    FROM public.PRODUTO
+    LEFT JOIN GRUPO_PRODUTO ON GRUPO_PRODUTO.GRID = PRODUTO.GRUPO

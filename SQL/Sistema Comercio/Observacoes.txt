@@ -1,0 +1,2 @@
+>>> Ativar as familias dos itens assim que ajustado o conversor
+--SELECT SG.SUBGP_NOME as DESCRICAO FROM SUB_GRUPO_PRODUTOS_OK SG

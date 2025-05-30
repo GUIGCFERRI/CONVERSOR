@@ -1,0 +1,1 @@
+SELECT tgrupos_produtos.descricao AS DESCRICAO FROM tgrupos_produtos

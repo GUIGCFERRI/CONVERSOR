@@ -1,0 +1,1 @@
+select categoria.descricao FROM categoria

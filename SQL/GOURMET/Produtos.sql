@@ -1,0 +1,20 @@
+SELECT
+  procodigo AS COD_FABRICANTE,
+  cpbcodbalanca AS BARRAS,
+  pronome AS DESCRICAO,
+  unisimbolo AS UND,
+  unisimbolo AS UND_COMPRA,
+  grpidentificacao AS FAMILIA,
+  dpridentificacao AS GRUPO,
+  proobs AS CARACTERISTICAS,
+  enpendereco AS FORNECEDOR,
+  prosaldo AS QTD,
+  puncusto AS CUSTO_MEDIO,
+  puncusto AS PRECO_CUSTO,
+  punpercav AS MARGEM_LUCRO,
+  punprecoav AS PRECO_VENDA,
+  icmaliquotas AS ST,
+  cfocfop AS CF,
+  maridentificacao AS COD_FABRICANTE,
+  proncm AS COD_NCM
+FROM v_pro;

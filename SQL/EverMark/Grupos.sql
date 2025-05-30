@@ -1,0 +1,1 @@
+SELECT EverMark.dbo.IvGrupo.Descricao AS DESCRICAO FROM EverMark.dbo.IvGrupo

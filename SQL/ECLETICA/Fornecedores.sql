@@ -1,0 +1,17 @@
+SELECT
+  FORNECEDORES.Codigo as codigo,
+  FORNECEDORES.Razao as nome,
+  FORNECEDORES.Fantasia as fantasia,
+  CONCAT (FORNECEDORES.TipoLogradouro, ' ' ,FORNECEDORES.Endereco) AS ENDERECO,
+  FORNECEDORES.NumRua as numero,
+  FORNECEDORES.ComplEnd as complemento,
+  FORNECEDORES.Bairro as bairro,
+  FORNECEDORES.Cidade as cidade,
+  FORNECEDORES.Estado as uf,
+  FORNECEDORES.Cep as cep,
+  FORNECEDORES.CGC as cnpj_cnpf,
+  FORNECEDORES.Insc_Estadual as ie_rg,
+  FORNECEDORES.Obs as observacoes,
+  FORNECEDORES.E_Mail as email,
+  CONCAT (FORNECEDORES.DDD, ' ' ,FORNECEDORES.Telefone) AS TELEFONE,
+FROM FORNECEDORES

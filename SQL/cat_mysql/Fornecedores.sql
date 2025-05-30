@@ -1,0 +1,20 @@
+SELECT
+  tbfornecedores.codfornecedor AS CODIGO,
+  case when tbfornecedores.cnpj = '' or tbfornecedores.cnpj is null then tbfornecedores.cpf else tbfornecedores.cnpj END as CNPJ_CNPF,
+  tbfornecedores.inscricaoestadual AS IE_RG,
+  tbfornecedores.inscricaomunicipal AS IM,
+  tbfornecedores.nomerazao AS NOME,
+  tbfornecedores.nomefantasia AS FANTASIA,
+  tbfornecedores.cep AS CEP,
+  tbfornecedores.logradouro AS ENDERECO,
+  tbfornecedores.bairro AS BAIRRO,
+  tbfornecedores.numero AS NUMERO,
+  tbfornecedores.complemento AS COMPLEMENTO,
+  tbfornecedores.uf AS UF,
+  tbfornecedores.cidade AS CIDADE,
+  tbfornecedores.telefonegeral AS TELEFONE,
+  tbfornecedores.telefonefax AS FAX,
+  tbfornecedores.telefonecelular AS CELULAR,
+  tbfornecedores.emailgeral AS EMAIL,
+  tbfornecedores.observacoes AS OBSERVACOES
+from tbfornecedores

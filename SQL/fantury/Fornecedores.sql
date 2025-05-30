@@ -1,0 +1,20 @@
+select
+  fornecedores.Codigo as codigo,
+  fornecedores.Nome as nome,
+  fornecedores.FantasiaApelido as fantasia,
+  fornecedores.CNPJ_CPF as cnpj_cnpf,
+  fornecedores.IE_RG as ie_rg,
+  fornecedores.IM as im,
+  fornecedores.Endereco as endereco,
+  fornecedores.EndNumero as numero,
+  fornecedores.EndComplemento as complemento,
+  fornecedores.Bairro as bairro,
+  fornecedores.Cidade as cidade,
+  fornecedores.UF as uf,
+  fornecedores.CEP as cep,
+  fornecedores.Telefone1 as telefone,
+  fornecedores.Telefone2 as celular,
+  fornecedores.Internet1 as email,
+  fornecedores.NomeContato as contato,
+  fornecedores.Obs as observacoes
+from fornecedores

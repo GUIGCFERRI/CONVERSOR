@@ -1,0 +1,22 @@
+SELECT 
+  `codclie` AS CODIGO,
+  case when cnpj = '' or cnpj is null then cpf else cnpj END AS CNPJ_CNPF,
+  case when ie = '' or ie is null then rg else ie END AS IE_RG,
+  `nomeclie` AS FANTASIA,
+  `endereco` AS ENDERECO,
+  `bairro` AS BAIRRO,
+  `cidade` AS CIDADE,
+  `estado` AS UF,
+  `cep` AS CEP,
+  `celular` AS CELULAR,
+  `fax` AS FAX,
+  `telefone` AS TELEFONE,
+  `natur` AS NATURALIDADE,
+  `dtnasc` AS NASCIMENTO,
+  `loctrab` AS LOCTRA,
+  `cargo` AS PROFISSAO,
+  `email` AS EMAIL,
+  `obs` AS OBSERVACOES,
+ -- `limitecred` AS LIMITE_CREDITO,
+  `razao` AS NOME
+  FROM CLIENTE

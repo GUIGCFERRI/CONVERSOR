@@ -1,0 +1,1 @@
+SELECT LINHAS.descricao AS DESCRICAO FROM linhas

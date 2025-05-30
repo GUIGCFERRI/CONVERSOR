@@ -1,0 +1,1 @@
+SELECT TBSECAO.sec_descricao AS DESCRICAO FROM TBSECAO WHERE TBSECAO.sec_iddepartamento = '3';

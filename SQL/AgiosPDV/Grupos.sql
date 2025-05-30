@@ -1,0 +1,1 @@
+SELECT AgiosPDV.dbo.grupos.descricao as descricao from AgiosPDV.dbo.grupos

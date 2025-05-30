@@ -1,0 +1,1 @@
+select mercadoria_subgrupo.descricao as descricao from mercadoria_subgrupo

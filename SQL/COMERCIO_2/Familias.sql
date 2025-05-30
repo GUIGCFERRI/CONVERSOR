@@ -1,0 +1,1 @@
+SELECT Comercio.dbo.subgrupo.Nome as descricao from Comercio.dbo.subgrupo

@@ -1,0 +1,21 @@
+select
+  cod_pes as codigo,
+  nome_pes as nome,
+  raz_pes as fantasia,
+  case when cpf_pes = '' or cpf_pes is null then cnpj_pes else cpf_pes END AS CNPJ_CNPF,
+  case when rg_pes = '' or rg_pes is null then ins_est_pes else rg_pes END AS IE_RG,
+  ins_mun_pes as im,
+  end_pes as endereco,
+  num_end_pes as numero,
+  compl_end_pes as complemento,
+  bai_pes as bairro,
+  replace(replace(cep_pes,'-',''),'.','') as cep,
+  nome_cid as cidade,
+  uf_cid as uf,
+  email_pes as email,
+  CONCAT(ddd_tel_pes, '', tel_pes) as telefone,
+  CONCAT(ddd_fax_pes, '', fax_pes) as fax,
+  CONCAT(ddd_cel_pes, '', cel_pes) as celular,
+  obs_pes as observacoes,
+from pessoas
+where forn_pes = '1'

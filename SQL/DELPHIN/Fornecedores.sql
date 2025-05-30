@@ -1,0 +1,20 @@
+SELECT
+  RECNO as codigo,
+  NOME as nome,
+  FANTASIA as fantasia,
+  CONTATO as contato,
+  case when cpf = '' or cpf is null then cgc else cpf END AS CNPJ_CNPF,
+  case when identidade = '' or identidade is null then inscricaoestadual else identidade END AS IE_RG,
+  InscricaoMunicipal as im,
+  ENDERECO as endereco,
+  Referencia as complemento,
+  BAIRRO as bairro,
+  CIDADE as cidade,
+  UF as uf,
+  replace(cep ,'-','') as cep,
+  FONERESIDENCIAL as telefone,
+  FONECOMERCIAL as celular,
+  FAX as fax,
+  EMAIL as email,
+  historico as observacoes
+FROM FORNEC

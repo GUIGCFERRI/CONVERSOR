@@ -1,0 +1,2 @@
+*** VERIFICAR OS CÓDIGOS NO SQL ANTES DA CONVERSÃO
+Usado para mesclar cadastros de Gdoor para Gdoor da sequencia nos códigos

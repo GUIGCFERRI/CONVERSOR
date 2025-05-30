@@ -1,0 +1,26 @@
+SELECT    
+    CLIENTES.cli_001 as codigo,
+    CLIENTES.cli_002 as nome,
+    CLIENTES.cli_003 as fantasia,
+    CLIENTES.cli_007 as endereco,
+    CLIENTES.cli_008 as numero,
+    CLIENTES.cep_002 as cep,
+    CLIENTES.cep_004 as complemento,
+    CLIENTES.cep_003 as bairro,
+    cast (CLIENTES.dat_001_1 as date) as cadastro,
+    CLIENTES.observacao as observacoes,
+    CLIENTES.celular1 as celular,
+    CLIENTES.limite_credito as limite_credito,
+    CLIENTES.saldo_atual as valor_a_receber,
+    CLIENTES.cidade_desc as cidade,
+    CLIENTES.uf as uf,
+    CLIENTES.data_nascimento as nascimento,
+    CLIENTES.email as email,
+    CLIENTES.filiacao_mae as mae,
+    CLIENTES.filiacao_pai as pai,
+    CLIENTES.nome_conjuge as conjuge,
+    CLIENTES.profissao as profissao,
+    CLIENTES.estado_civil as est_civil,
+    CLIENTES.sexo as sexo
+FROM CLIENTES
+where  CLIENTES.cli_001 > '0'

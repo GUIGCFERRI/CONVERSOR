@@ -1,0 +1,18 @@
+SELECT [Nome]
+      ,[Fantasia]
+      ,CASE WHEN CPF IS NULL THEN Cgc ELSE CPF END AS CNPJ_CNPF
+      ,CASE WHEN inscricao IS NULL THEN identidade ELSE inscricao END AS IE_RG
+      ,[Endereco]
+      ,[Bairro]
+      ,[Cidade]
+      ,[Estado]
+      ,[Cep]
+      ,[Telefone1]
+      ,[Fax]
+      ,[Celular]
+      ,[EMail]
+      ,[Profissao]
+      ,[Telefone]
+      ,[Numero]
+      ,[Complemento]
+  FROM [SIGCONTROL].[dbo].[dbtf0004]

@@ -1,0 +1,5 @@
+> Nome da base muda em cada cliente;
+> Antes de converter, verificar o TRI.SEQUENCIAFISCALALIQUOTASID usa o código correto para tributação (tabela tb_comercio_Sequencia_Fiscal_Aliquotas);
+> Conferir os dados em geral e principalmente tributos em novas conversões
+
+>>> EXECUTAR COMANDO PARA AJUSTE DAS CARACTERISTICAS DEPOIS DA CONVERSÃO

@@ -1,0 +1,2 @@
+select t_grupo_produto.desc_grupo as descricao
+from t_grupo_produto

@@ -1,0 +1,23 @@
+select
+  ncodi as codigo,
+  cnome as nome,
+  csexo as sexo,
+  ddatanasc as nascimento,
+  cendent as endereco,
+  cbairrent as bairro,
+  cestent as uf,
+  ccident as cidade,
+  ccepent as cep,
+  ctel as telefone,
+  cfax as fax,
+  nlimcredito as limite_credito,
+  case when ccpf = '' or ccpf is null then ccnpj else ccpf END AS CNPJ_CNPF,
+  case when cidentidade = '' or cidentidade is null then cinscest else cidentidade END AS IE_RG,
+  ccontato as contato,
+  cobservacao as observacoes,
+  ddataultcompra as ultima_compra,
+  ddatacad as cadastro,
+  cemail as email,
+  ccompleent as complemento,
+  ccel as celular
+from clientes

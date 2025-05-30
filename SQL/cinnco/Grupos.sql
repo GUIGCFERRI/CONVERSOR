@@ -1,0 +1,2 @@
+select tb_cadgrupoproduto.descricao from tb_cadgrupoproduto
+

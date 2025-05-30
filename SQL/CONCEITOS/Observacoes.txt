@@ -1,0 +1,1 @@
+Quando existir fornecedores altear o WHERE

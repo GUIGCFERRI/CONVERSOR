@@ -1,0 +1,1 @@
+SELECT [BaseFarmaciaSaoJose].[dbo].[grp].GRP_DESCRI AS DESCRICAO FROM [BaseFarmaciaSaoJose].[dbo].[grp]

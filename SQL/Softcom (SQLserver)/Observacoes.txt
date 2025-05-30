@@ -1,0 +1,2 @@
+>>> Conferir Cidade do cliente e fornecedor nas próximas bases
+>>> Converte somente os Produtos ATIVOS

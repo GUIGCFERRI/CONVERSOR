@@ -1,0 +1,1 @@
+SELECT subgrupoprodutos.nome_subgrupo AS DESCRICAO FROM SUBGRUPOPRODUTOS

@@ -1,0 +1,18 @@
+SELECT
+  CAD_PRO0.pro_codigo AS CODIGO,
+  CAD_PRO0.pro_descri AS DESCRICAO,
+  CAD_PRO0.pro_ncm AS COD_NCM,
+  CAD_PRO0.pro_cest AS PERSONAL6,
+  CAD_PRO0.pro_un AS UND,
+  CAD_PRO0.pro_codfab AS COD_FABRICANTE,
+  CAD_PRO0.pro_refere AS CARACTERISTICAS,
+  CAD_PRO0.pro_obs AS OBSERVACOES,
+  CAD_PRO0.pro_codbar AS BARRAS,
+  CAD_PRO0.pro_datcad AS DATA_CADASTRO,
+  CAD_PRO0.pro_pliqui AS PESO,
+  CAD_PRO0.pro_pcusto AS PRECO_CUSTO,
+  CAD_PRO0.pro_pcusmed AS CUSTO_MEDIO,
+  CAD_PRO0.pro_pmarg0 AS MARGEM_LUCRO,
+  CAD_PRO0.pro_pvenda AS PRECO_VENDA,
+  CAD_PRO0.pro_est AS QTD
+FROM CAD_PRO0

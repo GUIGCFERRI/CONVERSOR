@@ -1,0 +1,1 @@
+select GRUPO.nome AS DESCRICAO FROM grupo

@@ -1,0 +1,1 @@
+select Data7SqlBOAESPERANCA.dbo.GrupoProduto.nome as descricao from GrupoProduto

@@ -1,0 +1,3 @@
+>>> Ajustar ID da loja o script dos PRODUTOS
+
+>>> Muda o nome da base em cada cliente.

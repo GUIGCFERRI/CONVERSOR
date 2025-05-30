@@ -1,0 +1,2 @@
+select `cad_produtos_tipo`.`nome_tipo` as descricao from `cad_produtos_tipo`
+

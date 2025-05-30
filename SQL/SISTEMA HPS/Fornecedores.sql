@@ -1,0 +1,21 @@
+SELECT
+    F.CODIGO AS CODIGO,
+    F.NOME AS NOME,
+    F.FANTASIA AS FANTASIA,
+    F.CONTATO AS CONTATO,
+    replace (replace(F.CPF_CGC,'.','') ,'/','')|| F.DV AS CNPJ_CNPF,
+    F.INSCR_EST AS IE_RG,
+    F.INSCR_MUN AS IM,
+    F.ENDERECO AS ENDERECO,
+    F.NUMERO AS NUMERO,
+    F.COMPLEMENT AS COMPLEMENTO,
+    F.BAIRRO AS BAIRRO,
+    F.CIDADE AS CIDADE,
+    F.UF AS UF,
+    F.CEP AS CEP,
+    replace (replace( replace (replace(F.TELEFONE,'-','') ,'(',''),')',''),' ','') AS TELEFONE,
+    replace (replace( replace (replace(F.CELULAR,'-','') ,'(',''),')',''),' ','') AS CELULAR,
+    F.EMAIL AS EMAIL,
+    F.OBSERVACAO AS OBSERVACOES,
+    case when F.ATIVO = 'S' then 'Ativo' else 'Inativo' end as situacao
+FROM FORNECE AS F

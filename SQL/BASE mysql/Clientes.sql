@@ -1,0 +1,16 @@
+select clientes.`idClientes` as codigo,
+clientes.`nomeCliente` as nome,
+substring(clientes.rg from 1 for 20) as ie_rg,
+substring(clientes.documento from 1 for 18) as cnpj_cnpf,
+clientes.`telefone`,
+clientes.celular,
+clientes.`email`,
+clientes.`rua` as endereco,
+clientes.numero,
+clientes.`complemento`,
+clientes.bairro,
+clientes.cidade,
+substring(clientes.estado from 1 for 2) as uf,
+substring(clientes.cep from 1 for 9) as cep,
+clientes.`obs` as observacoes
+from clientes

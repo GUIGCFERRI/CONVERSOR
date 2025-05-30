@@ -1,0 +1,1 @@
+select nomgrupb as descricao from grupoprob where nomgrupb <> ''

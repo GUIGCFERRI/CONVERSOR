@@ -1,0 +1,1 @@
+select FACIL.dbo.GRUPO.GRP_Descricao as descricao from FACIL.dbo.GRUPO where GRUPO.GRP_Descricao <> '.'

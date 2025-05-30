@@ -1,0 +1,1 @@
+*** Conferir os "FORNECEDORES", parecem estar na mesma tabela de clientes, diferenciados pelo campo ParceiroNegocio.TipoParceiro = 16

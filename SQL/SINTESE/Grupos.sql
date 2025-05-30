@@ -1,0 +1,1 @@
+SELECT GRUPOS.descricao FROM GRUPOS

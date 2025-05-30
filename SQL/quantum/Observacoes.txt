@@ -1,0 +1,1 @@
+>>> Verificar o REGIME TRIBUTÁRIO e ajustar no SQL dos Produtos antes de converter.

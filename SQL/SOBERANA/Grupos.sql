@@ -1,0 +1,1 @@
+select GrupoEstoque.nomegrupo as descricao from GrupoEstoque

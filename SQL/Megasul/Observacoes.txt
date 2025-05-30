@@ -1,0 +1,50 @@
+base bem complicada, script usado na conversão adaptado ao cliente :
+
+select produto.pr_codigo as codigo,
+barras.BR_BARRAS as barras,
+produto.PR_DESCRICAO as descricao,
+produto.PR_PRECO as preco_venda,
+produto.PR_CUSTO as preco_custo,
+case when PRODUTO.PR_STCODIGO = 9 then
+'500' when PRODUTO.PR_STCODIGO = 10 then '500'
+when PRODUTO.PR_STCODIGO = 11 then '500'
+when PRODUTO.PR_STCODIGO = 12 then '500'
+ else '102' end "ST",
+produto.PR_UMSIGLA as und,
+produto.PR_CEST as personal6,
+produto2.PR_CFCODIGO as cod_ncm,
+PRODUTO2.PR_ORIGEM as OST,
+estoque.ES_QUANTIDADE as qtd
+from produto
+left join situacaotributaria on produto.PR_STCODIGO=SITUACAOTRIBUTARIA.ST_CODIGO
+left join produto2 on produto.PR_CODIGO=produto2.PR_PRCODIGO
+left join barras on produto.PR_CODIGO=barras.BR_PRCODIGO
+left join estoque on produto.PR_CODIGO=estoque.ES_PRCODIGO
+
+--------------------------------------------------------------------------------
+SELECT FORNECEDOR.[FO_ENCODIGO],
+       FORNECEDOR.[FO_CODIGO],
+       FORNECEDOR.[FO_TRANSPORTADORA],
+	   ENDERECO.[EN_CODIGO],
+	   ENDERECO.[EN_CGCCPF],
+       ENDERECO.[EN_UFSIGLA],
+       ENDERECO.[EN_FANTASIA],
+       ENDERECO.[EN_ENDERECO],
+       ENDERECO.[EN_COMPLEMENTO],
+       ENDERECO.[EN_BAIRRO],
+       ENDERECO.[EN_CEP],
+       ENDERECO.[EN_CIDADE],
+       ENDERECO.[EN_TELEFONE],
+       ENDERECO.[EN_FAX],
+       ENDERECO.[EN_IERG],
+       ENDERECO.[EN_CELULAR],
+       ENDERECO.[EN_RASOCIAL],
+       ENDERECO.[EN_NUMERO],
+       ENDERECO.[EN_EMAIL],
+       ENDERECO.[EN_IM],
+       ENDERECO.[EN_OBSERVACAO]
+  FROM [Megasul].[dbo].[FORNECEDOR]
+  INNER JOIN [Megasul].[dbo].[ENDERECO] ON ENDERECO.EN_CODIGO = FORNECEDOR.FO_ENCODIGO
+  WHERE FORNECEDOR.FO_TRANSPORTADORA = 'S'
+where produto2.PR_DTULTALT < '01/06/2019' 
+

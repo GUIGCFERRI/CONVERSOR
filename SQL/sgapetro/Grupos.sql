@@ -1,0 +1,1 @@
+select gpro.gprodescricao as descricao from gpro

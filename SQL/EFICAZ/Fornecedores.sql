@@ -1,0 +1,16 @@
+SELECT fornecedor_id AS CODIGO,
+nome AS NOME,
+fantasia AS FANTASIA,
+endereco AS ENDERECO,
+numero AS NUMERO,
+complemento AS COMPLEMENTO,
+bairro AS BAIRRO,
+municipio AS CIDADE,
+estado AS UF,
+ddd  || ' ' || telefone_1 AS TELEFONE,
+ddd  || ' ' || fax AS FAX,
+cnpj as CNPJ,
+inscricao AS IE,
+contato AS CONTATO,
+email AS EMAIL
+FROM fornecedores

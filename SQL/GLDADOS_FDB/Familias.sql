@@ -1,0 +1,1 @@
+select CADSUB.nomsub AS DESCRICAO FROM CADSUB;

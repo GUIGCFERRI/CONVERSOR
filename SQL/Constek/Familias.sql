@@ -1,0 +1,1 @@
+select SG.descricao FROM subgrupo SG

@@ -1,0 +1,23 @@
+    select
+    id_cliente as CODIGO,
+    nome as NOME,
+    endereco as ENDERECO,
+    bairro as BAIRRO,
+    cidade as CIDADE,
+    uf as UF,
+    cep as CEP,
+    tel_fixo as TELEFONE,
+    celular as CELULAR,
+    fax as FAX,
+    email as EMAIL,
+    cgc_cpf as CNPJ_CNPF,
+    ie_rg as IE_RG,
+    dtnasc as NASCIMENTO,
+    dtcad as CADASTRO,
+    limite_credito as LIMITE_CREDITO,
+    numero as NUMERO,
+    nome_fantasia as FANTASIA,
+    contato as CONTATO,
+    obs as OBSERVACOES,
+    profissao as PROFISSAO
+    from cliente

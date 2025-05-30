@@ -1,0 +1,20 @@
+SELECT
+  C.CODIGO
+, C.NOME
+, C.NOME_FANTASIA AS FANTASIA
+, C.CONTATO
+, C.CPF_CNPJ AS CNPJ_CNPF
+, C.RG_IE AS IE_RG
+, CASE C.EXCLUIDO WHEN 'N' THEN 'Ativo' else 'Inativo' end AS SITUACAO
+, C.CELULAR
+, C.TELEFONE
+--, C.OBSERVACAO
+, C.OBSERVACOES
+, C.EMAIL
+, CI.nome AS cidade
+, CI.uf
+FROM cliente C
+LEFT JOIN cidade CI ON CI.codigo = C.cod_cidade
+WHERE C.codigo > 0
+AND C.fornecedor = 'S'
+--WHERE COD_EMPRESA=1

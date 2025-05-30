@@ -1,0 +1,20 @@
+select fornecedor.idfornecedor as codigo,
+fornecedor.nome as fantasia,
+fornecedor.razao_social as nome,
+fornecedor.endereco,
+fornecedor.numero,
+fornecedor.complemento,
+fornecedor.telefone,
+cidade.nome as cidade,
+fornecedor.fax,
+fornecedor.celular,
+fornecedor.e_mail as email,
+fornecedor.contato,
+fornecedor.cnpj_cpf as cnpj_cnpf,
+fornecedor.ie_rg,
+fornecedor.observacao as observacoes,
+fornecedor.cep,
+fornecedor.bairro,
+cidade.fkestado as uf
+from fornecedor
+left join cidade on fornecedor.fkcidade = cidade.idcidade

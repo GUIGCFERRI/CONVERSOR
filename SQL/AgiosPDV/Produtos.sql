@@ -1,0 +1,23 @@
+SELECT
+       produtos.PRODUTO_COD AS CODIGO
+      ,produtos.DESCRICAO AS DESCRICAO
+      ,produtos.CODIGO_DE_BARRAS AS BARRAS
+      ,produtos.MARCA AS CARACTERISTICAS
+      ,produtos.UNIDADE AS UND
+      ,produtos.UNIDADE_COMPRA AS UND_COMPRA
+      ,produtos.QTDE_MINIMA AS QTD_IDEAL
+      ,produtos.QTDE_ESTOQUE AS QTD
+      ,grupos.DESCRICAO AS GRUPO
+      ,produtos.PRECO_CUSTO AS PRECO_CUSTO
+      ,produtos.CUSTO_MEDIO AS CUSTO_MEDIO
+      ,produtos.MARGEM_LUCRO AS MARGEM_LUCRO
+      ,produtos.PRECO_UNITARIO AS PRECO_VENDA
+      ,produtos.OBSERVACOES AS OBSERVACOES
+      ,produtos.CODIGO_FABRICANTE AS COD_FABRICANTE
+      ,produtos.DATA_ULTIMA_COMPRA AS ULTIMA_COMPRA
+      ,CAST (produtos.DATA_ULTIMA_ALTERACAO AS DATE) AS ALTERACAO_PRECO
+      ,produtos.DATA_CADASTRO AS DATA_CADASTRO
+      ,produtos.CODIGO_NCM AS COD_NCM
+      ,produtos.CEST AS PERSONAL6
+  FROM AgiosPDV.dbo.produtos
+LEFT JOIN AgiosPDV.dbo.grupos ON grupos.grupo_cod = produtos.GRUPO_COD

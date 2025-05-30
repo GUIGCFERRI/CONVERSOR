@@ -1,0 +1,32 @@
+SELECT 
+    PESSOA.idpessoa AS CODIGO,
+    TAB_MUNICIPIOS.NOME AS CIDADE,
+    PESSOA.bairro AS BAIRRO,
+    PESSOA.razaosocial AS NOME,
+    PESSOA.fantasia AS FANTASIA,
+    PESSOA.cnpjcpf AS CNPJ_CNPF,
+    PESSOA.ierg AS IE_RG,
+    PESSOA.endereco AS ENDERECO,
+    REPLACE (PESSOA.cep, '-' , '') AS CEP,
+    PESSOA.numero AS NUMERO,
+    PESSOA.complendereco AS COMPLEMENTO,
+    PESSOA.fone1 AS TELEFONE,
+    PESSOA.cel1 AS CELULAR,
+    PESSOA.fax1 AS FAX,
+    PESSOA.email AS EMAIL,
+    PESSOA.nomecontato AS CONTATO,
+    PESSOA.dtaniversario AS NASCIMENTO,
+    PESSOA.fornecedor,
+    PESSOA.cliente,
+    PESSOA.transportador,
+    PESSOA.sexo AS SEXO,
+    PESSOA.uf AS UF,
+    PESSOA.credito AS LIMITE_CREDITO,
+    PESSOA.conjugenome AS CONJUGE,
+    PESSOA.profisao AS PROFISSAO,
+    PESSOA.nmpai AS PAI,
+    PESSOA.nmmae AS MAE,
+    PESSOA.estcivil AS EST_CIVIL
+FROM PESSOA
+LEFT JOIN TAB_MUNICIPIOS ON TAB_MUNICIPIOS.ID = PESSOA.IDCIDADE
+WHERE PESSOA.fornecedor = 'N'

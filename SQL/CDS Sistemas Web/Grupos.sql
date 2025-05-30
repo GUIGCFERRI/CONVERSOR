@@ -1,0 +1,1 @@
+select BDComercialOrganizacaoVeterinariaLj.dbo.grupo.grupo as descricao from BDComercialOrganizacaoVeterinariaLj.dbo.grupo

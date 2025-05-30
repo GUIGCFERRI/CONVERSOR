@@ -1,0 +1,1 @@
+SELECT OticaPerfumariaSantaHelena.DBO.SubGrupo.nmSubGrupo AS DESCRICAO FROM OticaPerfumariaSantaHelena.DBO.SubGrupo

@@ -1,0 +1,16 @@
+select cadfor.codigo,
+cadfor.nome as fantasia,
+cadfor.RAZAO as nome,
+cadfor.fone as telefone,
+cadfor.fax as fax,
+cadfor.CONTATO,
+cadfor.ENDERECO,
+cadfor.cep,
+cadfor.bairro,
+cadfor.CIDADE,
+cadfor.ESTADO as uf,
+cadfor.INSCR as ie_rg,
+cadfor.CGC as cnpj_cnpf,
+cadfor.EMAIL,
+cadfor.NUMERO_END as numero
+from cadfor

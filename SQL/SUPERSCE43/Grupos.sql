@@ -1,0 +1,1 @@
+select SUPERSCE43.dbo.SUB_GRUPOS.NOME as descricao from SUPERSCE43.dbo.SUB_GRUPOS

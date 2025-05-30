@@ -1,0 +1,1 @@
+select VMD.dbo.GRPRC.Des_GrpPrc as descricao from VMD.dbo.GRPRC

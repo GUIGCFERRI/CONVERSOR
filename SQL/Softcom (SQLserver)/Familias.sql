@@ -1,0 +1,1 @@
+SELECT ac2.Descricao FROM acClasse2 ac2

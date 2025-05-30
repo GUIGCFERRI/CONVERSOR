@@ -1,0 +1,16 @@
+select fornecedores.`idFornecedores` as codigo,
+fornecedores.`nomeFornecedor` as nome,
+substring(fornecedores.`documento` from 1 for 18) as cnpj_cnpf,
+fornecedores.responsavel as contato,
+fornecedores.`telefone`,
+fornecedores.`celular`,
+fornecedores.`email`,
+fornecedores.rua as endereco,
+`fornecedores`.`numero`,
+fornecedores.`complemento`,
+fornecedores.`bairro`,
+fornecedores.cidade,
+fornecedores.`estado` as uf,
+fornecedores.cep,
+fornecedores.`obs` as observacoes
+from fornecedores

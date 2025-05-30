@@ -1,0 +1,1 @@
+select food.dbo.TOTAL_GRUPO.descricao as descricao from food.dbo.TOTAL_GRUPO 

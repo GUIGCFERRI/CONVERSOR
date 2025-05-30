@@ -1,0 +1,1 @@
+Esse banco, tem que arrumar o SQL pra pegar só um telefone e só um e-mail, tem mais de um registro vai dar erros na conversão, mas vai converter o primeiro registro.

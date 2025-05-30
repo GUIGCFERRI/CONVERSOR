@@ -1,0 +1,1 @@
+Não fiz CLIENTES E FORNECEDORES pois a base do cliente só tinha produtos.

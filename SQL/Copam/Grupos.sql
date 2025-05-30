@@ -1,0 +1,1 @@
+select Copam.dbo.GrupoProdutos.descricao as descricao from Copam.dbo.GrupoProdutos

@@ -1,0 +1,1 @@
+SELECT tbgrupoproduto.DESCRICAO AS DESCRICAO FROM tbgrupoproduto

@@ -1,0 +1,11 @@
+SELECT
+  Cod_Item AS CODIGO,
+  Quantidade AS QTD,
+  Preco AS PRECO_VENDA,
+  NomeProduto AS DESCRICAO,
+  UND AS UND,
+  NCM AS COD_NCM,
+  CSOSN AS ST,
+  Cod_Referencial AS COD_FABRICANTE,
+  CEST AS PERSONAL6
+FROM ITENS

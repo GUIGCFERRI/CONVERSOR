@@ -1,0 +1,1 @@
+SELECT [BDFINANC].[dbo].[Grupo de produtos].[Nome grupo] AS DESCRICAO FROM [BDFINANC].[dbo].[Grupo de produtos]

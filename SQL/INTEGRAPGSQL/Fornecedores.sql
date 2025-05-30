@@ -1,0 +1,15 @@
+select cadfor.fornecedor as codigo,
+cadfor.razao_social as nome,
+cadfor.fantasia,
+cadfor.endereco,
+cadfor.bairro,
+cadfor.cidade,
+cadfor.estado as uf,
+cadfor.cep,
+cadfor.ddd ||cadfor.fone as telefone,
+cadfor.fax,
+cadfor.cnpj as CNPJ_CNPF,
+cadfor.inscricao as IE_RG,
+cadfor.e_mail as email,
+cadfor.numero
+from cadfor

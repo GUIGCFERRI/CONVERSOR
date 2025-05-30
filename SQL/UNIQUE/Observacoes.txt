@@ -1,0 +1,1 @@
+>>> SEMPRE antes de converter, abrir a base no IB e conferir na tabela PRODUTO_PRECO qual o IDEMPRESA e IDTIPOPRECO e ajusta nas respectivas Joins no select dos produtos.

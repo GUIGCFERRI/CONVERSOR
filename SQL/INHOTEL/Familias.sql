@@ -1,0 +1,1 @@
+select nommarca as descricao from marca where nommarca <> ''

@@ -1,0 +1,22 @@
+>>> MUDA O NOME DA BASE EM CADA CLIENTE
+
+>>> SE NÃO CONVERTER CORRETAMENTE OS FORNECEDERES, TESTER EM NOVAS BASES O SCRIPT ABAIXO:
+select 
+  id as codigo
+, razaosocial as nome
+, cnpj as cnpj_cnpf
+, inscestd as ie_rg
+, telefone
+, telefone1 as fax
+, fantasia
+, endereco
+, bairro
+, cidade
+, estado as uf
+, cep
+, fax
+, celular
+, email
+, contato
+, obs  as observacoes
+from fornecedor

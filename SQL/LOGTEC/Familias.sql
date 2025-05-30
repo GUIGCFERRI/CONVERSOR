@@ -1,0 +1,1 @@
+SELECT subgrupo_produto.des_subgrupo as descricao from subgrupo_produto

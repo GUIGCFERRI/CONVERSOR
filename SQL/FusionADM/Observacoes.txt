@@ -1,0 +1,4 @@
+*** VERIFICAR QUAL INFORMAÇÃO SERÁ UTILIZADA NO CAMPO BARRAS - BALANÇA OU EAN
+
+produto.codigoBalanca as barras,
+PRODUTO_ALIAS.ALIAS AS cod_fabricante,

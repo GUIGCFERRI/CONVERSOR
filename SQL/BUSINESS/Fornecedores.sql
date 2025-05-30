@@ -1,0 +1,26 @@
+SELECT
+    SPKPARC.CODPARCEIRO AS CODIGO,
+    SPKPARC.NOMPARCEIRO AS NOME,
+    SPKPARC.NOMFANTASIA AS FANTASIA,
+    SPKPARC.NUMCNPJCPF AS CNPJ_CNPF,
+    SPKPARC.NUMIERG AS IE_RG,
+    SPKPARC.DTANASCIMENTO AS NASCIMENTO,
+    SPKPARC.DESCOMPLEMENTO AS COMPLEMENTO,
+    spkcid.nomcidade AS CIDADE,
+    spkest.sglestado AS UF,
+    SPKPARC.NUMCEP AS CEP,
+    SPKPARC.NUMTELEFONE1 AS TELEFONE,
+    SPKPARC.NUMTELEFONE2 AS CELULAR,
+    SPKPARC.NUMTELEFONE3 AS FAX,
+    SPKPARC.NOMCONTATO AS CONTATO,
+    SPKPARC.DESEMAIL1 AS EMAIL,
+    spkl.nomlogradouro AS ENDERECO,
+    spkb.nombairro AS BAIRRO,
+    SPKPARC.NUMLOGRADOURO AS NUMERO
+FROM SPKPARC
+    LEFT JOIN spkcid ON spkcid.codcidade = SPKPARC.codcidade
+    LEFT JOIN spkest ON spkest.codestado = spkcid.codestado
+    LEFT JOIN spkl ON spkl.codlogradouro = SPKPARC.codlogradouro
+    LEFT JOIN spkb ON spkb.codbairro = SPKPARC.codbairro
+    LEFT JOIN spkparcc ON spkparcc.codparceiro = SPKPARC.codparceiro
+    WHERE SPKPARC.indfornecedor = 'S'

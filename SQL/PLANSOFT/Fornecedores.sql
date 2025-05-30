@@ -1,0 +1,19 @@
+
+SELECT
+
+    CODIGO,
+    NOME,
+    ENDERECO,
+    CEP,
+    BAIRRO,
+    CIDADE,
+    UF,
+    FONE AS TELEFONE,
+    FAX,
+    CGC AS CNPJ_CNPF,
+    CONTATO,
+    INSCRICAO AS IE_RG,
+    EMAIL
+
+
+FROM FORNECEDOR

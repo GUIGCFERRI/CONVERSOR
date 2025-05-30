@@ -1,0 +1,1 @@
+*** Se usa Multilojas, conferir o "empresa_codigo" na tabela CONFEMPRESAFISCAL e ajustar nos Produtos, Clientes, Fornecedores

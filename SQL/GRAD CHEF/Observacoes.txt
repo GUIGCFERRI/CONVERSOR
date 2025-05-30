@@ -1,0 +1,3 @@
+Não feito Script de Fornecedores pois na base enviada não tinham informações.
+
+Tributação também não foi linkada com a tabela de tributações pois estava em branco.

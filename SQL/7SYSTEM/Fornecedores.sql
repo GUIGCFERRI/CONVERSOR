@@ -1,0 +1,20 @@
+SELECT
+  fornecedor.IDFORNECEDOR AS CODIGO,
+  fornecedor.NOME AS NOME,
+  fornecedor.FANTASIA AS FANTASIA,
+  fornecedor.ENDERECO AS ENDERECO,
+  fornecedor.NUMERO AS NUMERO,
+  fornecedor.BAIRRO AS BAIRRO,
+  CEPBR_CIDADE.CIDADE AS CIDADE,
+  CEPBR_CIDADE.UF AS UF,
+  fornecedor.CEP AS CEP,
+  fornecedor.TELEFONE AS TELEFONE,
+  fornecedor.FONE_02 AS CELULAR,
+  fornecedor.FAX AS FAX,
+  fornecedor.CNPJ AS CNPJ_CNPF,
+  fornecedor.IE AS IE_RG,
+  fornecedor.EMAIL AS EMAIL,
+  fornecedor.OBS AS OBSERVACOES,
+  fornecedor.CONTATO AS CONTATO
+FROM fornecedor
+LEFT JOIN CEPBR_CIDADE ON CEPBR_CIDADE.id_cidade = FORNECEDOR.LKCIDADE

@@ -1,0 +1,1 @@
+SELECT DESCRICAO FROM AlphaLoja.dbo.Grupos

@@ -1,0 +1,1 @@
+select grupo.grudes as descricao from grupo

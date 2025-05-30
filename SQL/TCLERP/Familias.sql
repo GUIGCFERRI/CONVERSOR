@@ -1,0 +1,1 @@
+select produto_sub_grupo.nome as descricao from produto_sub_grupo

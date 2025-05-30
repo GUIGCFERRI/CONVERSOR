@@ -1,0 +1,16 @@
+select produto.id as codigo,
+produto.`PROCOD` as cod_fabricante,
+produto.`PRODES` as descricao,
+produto.`PROUND` as und,
+produto.procus as preco_custo,
+produto.proven as preco_venda,
+produto.`PROLOC` as tamanho,
+produto.proref as caracteristicas,
+produto.`PROS01` as qtd,
+produto.`Observacao` as observacoes,
+produto.`CodigoBarras` as barras,
+produto.`tributacao` as st,
+produto.`cd_ncm` as cod_ncm,
+produto.`ds_unidade_compra` as und_compra,
+produto.`nr_cest` as personal6
+from produto

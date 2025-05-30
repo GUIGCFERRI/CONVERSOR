@@ -1,0 +1,3 @@
+>>> Nome do banco muda em cada cliente
+
+>>> Conferir o ID_EMPRESA no script dos Produtos antes de converter

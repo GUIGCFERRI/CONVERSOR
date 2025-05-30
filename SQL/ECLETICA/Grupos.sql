@@ -1,0 +1,1 @@
+select grupos.descr_grupo as descricao from grupos;

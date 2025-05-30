@@ -1,0 +1,1 @@
+>>> Revisar se usa tabela de preços e ajustar no LEFT JOIN TABPREDET PR ON PR.PRODUTO = P.CODIGO AND PR.TABELA = '1'

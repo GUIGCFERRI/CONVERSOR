@@ -1,0 +1,1 @@
+>>> Após conversão, ajustar nas configurações do Gdoor os campos PERSONAL1 para LOCALIZACAO e PERSONAL2 para MODELO

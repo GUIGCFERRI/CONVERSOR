@@ -1,0 +1,1 @@
+Teria que conferir em outra base os preços custo,venda e cod_fabricante, coloquei no select mas não tenho certeza se estão corretos

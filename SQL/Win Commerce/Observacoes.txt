@@ -1,0 +1,1 @@
+Verificar a tabela de produtos, a tabela correta é a produto_complemento

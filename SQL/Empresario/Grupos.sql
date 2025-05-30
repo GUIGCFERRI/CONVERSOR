@@ -1,0 +1,1 @@
+SELECT Empresario.dbo.ESTGRU.DESCRICAO AS DESCRICAO FROM Empresario.dbo.ESTGRU

@@ -1,0 +1,26 @@
+select
+    substring (c.cliente_codigo from 3 for 8) as codigo,
+    c.nome as nome,
+    c.razao_social as fantasia,
+    c.apelido as contato,
+    case when c.cpf = '' or c.cpf is null then c.cnpj else c.cpf END AS cnpj_cnpf,
+    case when c.rg = '' or c.rg is null then c.insc_estadual else c.rg END AS IE_RG,
+    c.logradouro as endereco,
+    c.numero as numero,
+    c.complemento as complemento,
+    c.bairro as bairro,
+    c.cep as cep,
+    cid.descricao as cidade,
+    cid.sigla_estado as uf,
+    c.email as email,
+    c.fone as telefone,
+    c.obs as observacoes,
+    c.nome_pai as pai,
+    c.nome_mae as mae,
+    c.conjuge as conjuge,
+    c.limite_credito as limite_credito,
+    c.data_nascimento as nascimento,
+    --c.data_inicio_atividade as cadastro,
+    case when c.inativo = 'True' then 'Inativo' else 'Ativo' end as SITUACAO
+from cliente as c
+left join cidade cid on c.id_cidade = cid.id_cidade

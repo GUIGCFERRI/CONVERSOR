@@ -1,0 +1,2 @@
+SELECT GRUPO.GRUPO AS descricao
+FROM GRUPO;

@@ -1,0 +1,3 @@
+>>> Código interno passado para o PERSONAL1, depois de converter, exportar e importar na CODIGO_FONECEDOR se necessário.
+
+>>> Revisar tributos em futuras conversões

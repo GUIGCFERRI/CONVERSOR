@@ -1,0 +1,1 @@
+>>> Banco que orginou o script com poucos dados, revisar código em futuras conversões, principalmente CEST, Quantidade

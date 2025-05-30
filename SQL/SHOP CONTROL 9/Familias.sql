@@ -1,0 +1,1 @@
+SELECT S9_Real.dbo.Grupos.Nome AS DESCRICAO FROM S9_Real.dbo.GRUPOS

@@ -1,0 +1,18 @@
+select fornecedores.`COD_FORNECEDOR` as codigo,
+fornecedores.`NOME`,
+fornecedores.`APELIDO` as fantasia,
+fornecedores.`ENDERECO`,
+fornecedores.`NUMERO`,
+fornecedores.`CELULAR`,
+fornecedores.`CEP`,
+fornecedores.`BAIRRO`,
+fornecedores.`MUNICIPIO` as cidade,
+fornecedores.`UF`,
+fornecedores.`INSC_CNPJ` as cnpj_cnpf,
+fornecedores.`INSC_ESTADUAL` as ie_rg,
+fornecedores.`FAX`,
+fornecedores.`EMAIL`,
+fornecedores.`CONTATO`,
+fornecedores.`OBS` as observacoes,
+fornecedores.`FONES` as telefone
+from fornecedores

@@ -1,0 +1,1 @@
+SELECT AGRUPAMENTO.NOME AS DESCRICAO FROM Raffinato.dbo.Agrupamento

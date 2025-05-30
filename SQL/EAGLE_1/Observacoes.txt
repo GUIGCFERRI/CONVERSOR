@@ -1,0 +1,3 @@
+Não foi possível localizar as tributações
+
+No cadastro de pessoas este banco está com a tabela ENDERECO

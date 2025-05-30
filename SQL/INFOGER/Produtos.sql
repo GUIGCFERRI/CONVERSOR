@@ -1,0 +1,23 @@
+select
+produto.cd_produto as cod_fabricante,
+produto.nm_produto as descricao,
+produto.cd_original as caracteristicas,
+gruprod.nm_gruprod as grupo,
+SUBGRUPROD.NM_SUBGRUPROD AS FAMILIA,
+produto.un_medida as und,
+substring (TRIBUTACAO_GRUPO.NM_TRIBUTACAO_GRUPO from 1 for 1) AS ST,
+TABELA_PRECO_PRODUTO.PRECO_VENDA AS PRECO_VENDA,
+produto.obs as observacoes,
+produto.qt_estoque as qtd,
+produto.dt_atz as data_cadastro,
+PRODUTO_CLASS_FISCAL.NM_CLASS_FISCAL AS COD_NCM,
+CEST.CEST AS PERSONAL6
+--produto.cd_fabricante as cod_fabricante
+from produto
+left join gruprod on produto.cd_gruprod = gruprod.cd_gruprod
+LEFT JOIN SUBGRUPROD ON SUBGRUPROD.CD_SUBGRUPROD = PRODUTO.CD_SUBGRUPROD
+LEFT JOIN PRODUTO_CLASS_FISCAL ON PRODUTO_CLASS_FISCAL.CD_CLASS_FISCAL = PRODUTO.CD_CLASS_FISCAL
+LEFT JOIN CEST ON CEST.CD_CEST = PRODUTO_CLASS_FISCAL.CD_CEST
+LEFT JOIN TRIBUTACAO_GRUPO ON TRIBUTACAO_GRUPO.ID_TRIBUTACAO_GRUPO = PRODUTO.ID_TRIBUTACAO_GRUPO
+LEFT JOIN TABELA_PRECO_PRODUTO ON TABELA_PRECO_PRODUTO.CD_PRODUTO = PRODUTO.CD_PRODUTO
+WHERE TABELA_PRECO_PRODUTO.CD_TABELA_PRECO = '1'

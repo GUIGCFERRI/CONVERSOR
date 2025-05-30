@@ -1,0 +1,1 @@
+>>> Revisar tributos dos itens, pois na base atual não apresenta dados nesses campos.

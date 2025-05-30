@@ -1,0 +1,23 @@
+select
+  idCliente as codigo,
+  nome as nome,
+  fantasia as fantasia,
+  cpf as cnpj_cnpf,
+  rg as ie_rg,
+  endereco as endereco,
+  numero as numero,
+  complemento as complemento,
+  bairro as bairro,
+  cidade as cidade,
+  uf as uf,
+  cep as cep,
+  fone as telefone,
+  celular as celular,
+  email as email,
+  limite as limite_credito,
+  est_civil as est_civil,
+  conjuge as conjuge,
+  obs as observacoes,
+  dt_nasc as nascimento,
+  dtabertura as cadastro
+from cliente

@@ -1,0 +1,14 @@
+SELECT 
+  f.ID as CODIGO
+, f.NOME
+, f.FONEFAX as TELEFONE
+, f.EMAIL
+, f.CPFCNPJ as CNPJ_CNPF
+, f.RG as IE_RG
+, f.RUANUMERO as ENDERECO 
+, f.BAIRRO
+, f.CIDADE
+, f.ESTADO as UF
+, f.CEP
+, f.OBS as OBSERVACOES
+FROM fornecedor f

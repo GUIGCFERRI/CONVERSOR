@@ -1,0 +1,19 @@
+SELECT
+    FORNEDECOR.ID AS CODIGO,             
+    FORNEDECOR.FANTASIA,       
+    FORNEDECOR.RAZAO AS NOME,          
+    FORNEDECOR.CNPJ AS CNPJ_CNPF,          
+    FORNEDECOR.IE AS IE_RG,
+    FORNEDECOR.CONTATO,        
+    FORNEDECOR.ENDERECO,      
+    FORNEDECOR.BAIRRO,         
+    FORNEDECOR.CIDADE,         
+    FORNEDECOR.UF,             
+    FORNEDECOR.CEP,            
+    FORNEDECOR.TELEFONE,       
+    FORNEDECOR.FAX,           
+    FORNEDECOR.EMAIL,                      
+    FORNEDECOR.OBS AS OBSERVACOES                    
+    --FORNEDECOR.COMPLEMENTO,            
+   -- FORNEDECOR.NUMERO  
+FROM FORNEDECOR

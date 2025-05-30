@@ -1,0 +1,20 @@
+SELECT
+  COD_Fornecedor as Codigo,
+  Nome as Nome,
+  COALESCE(CADASTROFORNECEDOR.CPF,CADASTROFORNECEDOR.CNPJ) AS CNPJ_CNPF,
+  Endereco as Endereco,
+  Numero as Numero,
+  Complemento as Complemento,
+  Bairro as Bairro,
+  Cidade as Cidade,
+  UF as UF,
+  CEP as CEP,
+  Telefone1 as Telefone,
+  Telefone2 as Celular,
+  Fax as FAX,
+  Email as Email,
+  Obs as Observacoes,
+  Inscricao_Estadual as IE_RG,
+  Nome_Fantasia as Fantasia,
+  Representante as Contato
+FROM CADASTROFORNECEDOR

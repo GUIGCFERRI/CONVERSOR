@@ -1,0 +1,23 @@
+SELECT 
+  cliente.CODI AS CODIGO,
+  cliente.NOME AS NOME,
+  cliente.CONTATO AS CONTATO,
+  cliente.FANTA AS FANTASIA,
+  cliente.EMAIL AS EMAIL,
+  case when cliente.CNPJ = '' or cliente.CNPJ is null then cliente.CPF else cliente.CNPJ END AS CNPJ_CNPF,
+  case when cliente.CGF = '' or cliente.CGF is null then cliente.RG else cliente.CGF END AS IE_RG,
+  cliente.ENDER AS ENDERECO,
+  cliente.BAIRRO AS BAIRRO,
+  cliente.PONTOREF AS COMPLEMENTO,
+  cliente.CIDADE AS CIDADE,
+  cliente.UF AS UF,
+  cliente.CEP AS CEP,
+  cliente.FONE AS FONE,
+  cliente.CELULAR AS CELULAR,
+  cliente.ESTCIV AS EST_CIVIL,
+  cliente.PAI AS PAI,
+  cliente.MAE AS MAE,
+  cliente.LIMITE AS LIMITE_CREDITO,
+  cliente.IE$0 AS OBSERVACOES,
+  cliente.DTCAD AS CADASTRO
+FROM cliente

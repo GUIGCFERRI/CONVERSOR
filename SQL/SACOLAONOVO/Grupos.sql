@@ -1,0 +1,4 @@
+SELECT 
+      [Nome] AS DESCRICAO
+  FROM [SACOLAONOVO].[dbo].[Grupos]
+  WHERE TIPO = 'PRODUTO'

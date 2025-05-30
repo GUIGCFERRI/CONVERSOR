@@ -1,0 +1,1 @@
+select Copam.dbo.SubGrupo.descricao as descricao from Copam.dbo.SubGrupo

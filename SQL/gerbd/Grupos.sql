@@ -1,0 +1,3 @@
+select grupos.`descr` as descricao  from grupos
+
+

@@ -1,0 +1,15 @@
+select fornecedores.`razaosocial` as nome,
+fornecedores.`ENDERECO`,
+fornecedores.cep,
+fornecedores.bairro,
+fornecedores.`CIDADE`,
+fornecedores.`ESTADO` as uf,
+`fornecedores`.cgc as cnpj_cnpf,
+fornecedores.`INSCRICAO` as ie_rg,
+fornecedores.telefone,
+fornecedores.`FAX`,
+fornecedores.email,
+fornecedores.`empresa` as fantasia,
+fornecedores.`Codigo`,
+fornecedores.`numero`
+from fornecedores

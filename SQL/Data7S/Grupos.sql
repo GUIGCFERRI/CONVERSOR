@@ -1,0 +1,1 @@
+select Data_Se7e_FRANGO.dbo.GrupoProduto.nome as descricao from GrupoProduto

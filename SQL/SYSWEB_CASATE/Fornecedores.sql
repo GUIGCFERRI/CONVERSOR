@@ -1,0 +1,20 @@
+SELECT
+  cad_for0.for_codigo AS CODIGO,
+  cad_for0.for_repres AS CONTATO,
+  cad_for0.for_fan AS FANTASIA,
+  cad_for0.for_razao AS NOME,
+  cad_for0.for_end AS ENDERECO,
+  cad_for0.for_comple AS COMPLEMENTO,
+  cad_for0.for_bairro AS BAIRRO,
+  cad_for0.for_cidade AS CIDADE,
+  cad_for0.for_numend AS NUMERO,
+  cad_for0.for_uf AS UF,
+  cad_for0.for_cep AS CEP,
+  case when cad_for0.for_cgc = '' or cad_for0.for_cgc is null then cad_for0.for_cpf else cad_for0.for_cgc END as CNPJ_CNPF,
+  case when cad_for0.for_insc = '' or cad_for0.for_insc is null then cad_for0.for_ident else cad_for0.for_insc END as IE_RG,
+  cad_for0.for_insmun AS IM,
+  cad_for0.for_tel1 AS TELEFONE,
+  cad_for0.for_tel2 AS CELULAR,
+  cad_for0.for_obs AS OBSERVACOES,
+  cad_for0.for_email AS EMAIL
+FROM cad_for0

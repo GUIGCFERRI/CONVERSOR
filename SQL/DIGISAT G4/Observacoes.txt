@@ -1,0 +1,28 @@
+*** TABELA DE CONTAS A RECEBER"AJUSTADA", POIS MUDOU NOME AONDE FICAM OS DADOS.
+*** CASO SOLICITADO CONTAS A PAGAR, AVALIAR A IMPLEMENTAÇÃO.
+
+-----------------------------------------------------------------------------------------
+SQL ANTIGO / 28/12/2023
+-----------------------------------------------------------------------------------------
+select
+                    RECEBER.numero||pagarreceber.ordem||pagarreceber.pessoaid as documento
+                    Parc. ||RECEBER.ordem || do Doc N. || RECEBER.numero as historico
+                    RECEBER.pessoaid as cod_cliente
+                  , substring(pessoa.nome from 1 for 60) as nom_cliente
+                  , cast(RECEBER.datainclusao as date) as emissao
+                  , cast(RECEBER.vencimento as date) as vencimento
+                  , RECEBER.valor as valor_dup
+                  , cast(historicopagarreceber.datainclusao as date) as recebimento
+                  , historicopagarreceber.valor as valor_rec
+                  , historicopagarreceber.juro as valor_jur
+                  , case when (historicopagarreceber.tiporeajuste='Desconto') then historicopagarreceber.descontoacrescimo else '0' end as valor_des
+                  , especiepagamento.descricao as especie
+                  , RECEBER.ordem as num_parcela
+                  , RECEBER.historico as observacoes
+                  , documento.numero as cnpj
+                  from pagarreceber
+                  join pessoa on pessoa.id = pagarreceber.pessoaid
+                  left join historicopagarreceber on historicopagarreceber.id = pagarreceber.historicopagarreceberid
+                  LEFT JOIN DOCUMENTO D ON P.ID = D.PESSOAID AND D.TIPO = 'Cnpj'
+                  left join especiepagamento on especiepagamento.id = RECEBER.especiepagamentoid where RECEBER.tipo = 'Receber' and RECEBER.ativo=1 and RECEBER.situacao<>'Aguardando'
+                  order by 1

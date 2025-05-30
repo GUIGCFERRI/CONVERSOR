@@ -1,0 +1,1 @@
+select BDSantoPao_PD.dbo.CAD_GrupoEstoque.DescricaoGrupoEstoque as descricao from BDSantoPao_PD.dbo.CAD_GrupoEstoque

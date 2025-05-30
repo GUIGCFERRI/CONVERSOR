@@ -1,0 +1,1 @@
+select sub_grupos.nome as descricao from sub_grupos

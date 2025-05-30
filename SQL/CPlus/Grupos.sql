@@ -1,0 +1,16 @@
+SELECT SECAO.NOMESECAO AS DESCRICAO FROM SECAO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

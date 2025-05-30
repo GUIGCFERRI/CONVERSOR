@@ -1,0 +1,1 @@
+O banco enviado pelo cliente era muito incompleto, não tinha muitas informações de produtos preenchidas, então o select de produtos ficou bem fraco, caso venha um novo banco pode ser revisado os campos.

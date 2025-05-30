@@ -1,0 +1,4 @@
+>> Revisar tributos em futuras conversões, base atual com poucas informações. Verificar tbm telefones dos clientes.
+
+>> Script de clientes trás todos os registro, se necessário ajustar script somente para clientes. 
+

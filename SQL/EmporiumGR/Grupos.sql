@@ -1,0 +1,1 @@
+SELECT EmporiumGR.dbo.Setores.Descrição AS DESCRICAO FROM EmporiumGR.dbo.Setores

@@ -1,0 +1,9 @@
+SELECT
+  Id AS CODIGO,
+  Produto AS DESCRICAO,
+  Marca AS CARACTERISTICAS,
+  CodigoDeBarras AS BARRAS,
+  PrecoCusto AS PRECO_CUSTO,
+  PrecoVenda AS PRECO_VENDA,  
+  Estoque AS QTD
+FROM TBL_PRODUTOS

@@ -1,0 +1,23 @@
+SELECT SYS_CLIENTE.cli_codigo AS CODIGO,
+SYS_CLIENTE.cli_nome AS NOME,
+SYS_CLIENTE.cli_fantasia AS FANTASIA,
+SYS_CLIENTE.cli_endereco AS ENDERECO,
+SYS_CLIENTE.cli_complemento AS COMPLEMENTO,
+SYS_CLIENTE.cli_bairro AS BAIRRO,
+SYS_CLIENTE.cli_cidade AS CIDADE,
+SYS_CLIENTE.cli_estado as uf,
+SYS_CLIENTE.cli_cep as cep,
+SYS_CLIENTE.cli_telefone as telefone,
+SYS_CLIENTE.cli_fax as fax,
+SYS_CLIENTE.cli_celular as celular,
+SYS_CLIENTE.cli_cpf as cnpj_cnpf,
+SYS_CLIENTE.cli_rgie as ie_rg,
+case when SYS_CLIENTE.cli_cadastro is null then current_date
+else SYS_CLIENTE.cli_cadastro end as cadastro,
+SYS_CLIENTE.cli_datanascimento as nascimento,
+SYS_CLIENTE.cli_contato as contato,
+SYS_CLIENTE.cli_email as email,
+SYS_CLIENTE.cli_pai as pai,
+SYS_CLIENTE.cli_mae as mae,
+SYS_CLIENTE.cli_numero as numero
+from SYS_CLIENTE

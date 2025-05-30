@@ -1,0 +1,19 @@
+---------------SCRITP ESTOQUE ANTIGO------------
+select
+    mercadoria.idmercadoria as codigo,
+    mercadoria.descricao as descricao,
+    mercadoria.referencia as cod_fabricante,
+    mercadoria.ncm as cod_ncm,
+    mercadoria_empresa_preco.valpreco as preco_venda,
+    mercadoria_estoque.qtdsaldo as qtd,
+    mercadoria_grupo.descricao as grupo,
+    mercadoria_subgrupo.descricao as familia,
+    max (mercadoria_imposto.cst) as st,
+    mercadoria.cest as personal6
+from mercadoria
+left join mercadoria_empresa_preco on mercadoria_empresa_preco.idmercadoria = mercadoria.idmercadoria
+left join mercadoria_estoque on mercadoria_estoque.idmercadoria = mercadoria.idmercadoria
+left join mercadoria_grupo on mercadoria_grupo.idgrupo = mercadoria.idgrupo
+left join mercadoria_subgrupo on mercadoria_subgrupo.idsubgrupo = mercadoria.idsubgrupo
+left join mercadoria_imposto on mercadoria_imposto.tipoimposto = mercadoria.tipoimposto
+group by 1,2,3,4,5,6,7,8,10

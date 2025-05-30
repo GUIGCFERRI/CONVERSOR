@@ -1,0 +1,20 @@
+select clientes.CODIGO,
+clientes.RAZAO as nome,
+clientes.NOME as fantasia,
+clientes.fone as telefone,
+clientes.CELULAR,
+clientes.fax,
+clientes.contato,
+clientes.EMAIL,
+clientes.ENDERECO,
+clientes.cep,
+clientes.BAIRRO,
+clientes.cidade,
+clientes.CIDADE,
+clientes.ESTADO as uf,
+clientes.INS_RG as ie_rg,
+clientes.CGC_CPF as cnpj_cnpf,
+clientes.DATA_CAD as cadastro,
+clientes.NUMERO_END as numero
+from clientes
+where clientes.CODIGO>0

@@ -1,0 +1,2 @@
+Firebird 3.0
+script pronto para gerar inserts, mas tem que usar o IBExpert

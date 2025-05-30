@@ -1,0 +1,6 @@
+*** COMENTADO "CÓDIGO DOS ITENS" - CONVERSÃO ESPECIFICA.
+------->>> AJUSTAR CONFORME NECESSIDADE.
+
+>>> Após conversão, executar script para criar as CARACTERISTICAS na tabela nova:
+
+INSERT INTO caracteristicas (DESCRICAO) select e.caracteristicas as DESCRICAO from estoque e WHERE e.caracteristicas IS NOT NULL group by e.caracteristicas;

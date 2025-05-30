@@ -1,0 +1,1 @@
+SELECT MARCA AS DESCRICAO FROM Bancodados.dbo.Marcas

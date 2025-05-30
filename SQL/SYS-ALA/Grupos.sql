@@ -1,0 +1,1 @@
+select sys_grupo_produto.gpro_nome as descricao from sys_grupo_produto

@@ -1,0 +1,5 @@
+*** Favor conferir em novas conversões a parte dos tributos, se mantem os campos selecionados ou se ativa e usa os comentados no Script.
+
+>> LOCALIZACAO incluída no campo PERSONAL1
+>> SETOR incluído no campo PERSONAL2
+

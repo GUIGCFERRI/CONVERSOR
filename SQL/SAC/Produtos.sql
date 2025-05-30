@@ -1,0 +1,23 @@
+select
+    codigo as barras,
+    nome as descricao,
+    codigo_ean,
+    un as und,
+    nome_fornecedor as fornecedor,
+    grupo as grupo,
+    subgrupo as familia,
+    peso as peso,
+    estoque as qtd,
+    estoque_min as qtd_ideal,
+    custo as preco_custo,
+    ml as margem_lucro,
+    preco_vista as preco_venda,
+    situacao_tributaria as st,
+    codigo_fabricante as cod_fabricante,
+    localizacao as observacoes,
+    ultima_entrada as ultima_compra,
+    ultima_saida as ultima_venda,
+    ncm as cod_ncm,
+    cest as personal6,
+    case when ativo = 'true' then 'Ativo' else 'Inativo' end as SITUACAO
+from produtos

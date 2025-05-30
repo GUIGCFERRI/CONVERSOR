@@ -1,0 +1,1 @@
+select MERCEARIAMIGUEL_10075.dbo.Grupo_Produto.Descricao from MERCEARIAMIGUEL_10075.dbo.Grupo_Produto

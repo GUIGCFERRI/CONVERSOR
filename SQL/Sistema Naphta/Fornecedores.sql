@@ -1,0 +1,19 @@
+SELECT
+    COD_FORNECEDOR AS CODIGO,
+    CGCCPF AS CNPJ_CNPF,
+    INSCRICAO AS IE_RG,
+    NOME AS NOME,
+    ENDERECO,
+    BAIRRO,
+    CIDADE,
+    UF,
+    CEP,
+    CONTATO,
+    FONE1 AS TELEFONE,
+    FONE2 AS CELULAR,
+    FAX,
+    case when ATIVO = 'S' then 'Ativo' else 'Inativo' end as SITUACAO,
+    EMAIL,
+    FANTASIA,
+    OBSERVACOES
+FROM FORNECEDORES

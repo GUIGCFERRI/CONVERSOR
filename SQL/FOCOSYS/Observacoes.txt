@@ -1,0 +1,3 @@
+>> Após abrir o Gdoor, executar o comando:
+
+INSERT INTO caracteristicas (DESCRICAO) select e.caracteristicas as DESCRICAO from estoque e WHERE e.caracteristicas IS NOT NULL group by e.caracteristicas;
