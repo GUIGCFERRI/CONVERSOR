@@ -18,7 +18,6 @@ function Login() {
 
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
-
       navigate('/dashboard');
     } catch (err) {
       setErro(err.response?.data?.error || 'Erro ao fazer login');
@@ -26,18 +25,44 @@ function Login() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <label>Email</label>
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
-        <br />
-        <label>Senha</label>
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-        <br />
-        <button type="submit">Entrar</button>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <form
+        onSubmit={handleLogin}
+        className="bg-white p-8 rounded shadow-md w-full max-w-md"
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">Login</h2>
+
+        {erro && <p className="text-red-500 text-sm mb-4">{erro}</p>}
+
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-medium mb-1">Email</label>
+          <input
+            type="email"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-medium mb-1">Senha</label>
+          <input
+            type="password"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+        >
+          Entrar
+        </button>
       </form>
-      {erro && <p style={{ color: 'red' }}>{erro}</p>}
     </div>
   );
 }
