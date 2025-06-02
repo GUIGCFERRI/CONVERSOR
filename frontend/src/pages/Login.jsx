@@ -30,7 +30,12 @@ function Login() {
         onSubmit={handleLogin}
         className="bg-white p-8 rounded shadow-md w-full max-w-md"
       >
+        <div className="flex justify-center mb-6">
+          <img src="/logo-zucchetti.png" alt="Logo Zucchetti" className="h-16" />
+        </div>
+  
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">Login</h2>
+  
 
         {erro && <p className="text-red-500 text-sm mb-4">{erro}</p>}
 
