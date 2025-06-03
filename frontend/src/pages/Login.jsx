@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import api from '../services/api';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../services/api";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -8,17 +8,19 @@ function Login() {
   const [erro, setErro] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+   const handleSubmit = async (e) => {
+    e.preventDefault(); // SEM ISSO o form recarrega a página inteira
     setErro('');
 
     try {
-      const res = await api.post('/login', { email, password });
-      const { token, user } = res.data;
-
-      localStorage.setItem('token', token);
-      localStorage.setItem('user', JSON.stringify(user));
-      navigate('/dashboard');
+      const response = await api.post("/login", { email, password });
+      const { token, user } = response.data;
+      localStorage.setItem("authToken", token);
+      localStorage.setItem(
+        "userProfile",
+        JSON.stringify({ role: user.role, name: user.name })
+      );
+      navigate("/", { replace: true }); // redireciona para o dashboard
     } catch (err) {
       setErro(err.response?.data?.error || 'Erro ao fazer login');
     }
@@ -27,7 +29,7 @@ function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <form
-        onSubmit={handleLogin}
+        onSubmit={handleSubmit}
         className="bg-white p-8 rounded shadow-md w-full max-w-md"
       >
         <div className="flex justify-center mb-6">
