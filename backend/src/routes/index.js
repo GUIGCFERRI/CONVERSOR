@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middlewares/authMiddleware');
 const requireRole = require('../middlewares/roleMiddleware');
-
+const { forgotPassword, resetPassword } = require('../controllers/authController');
 // Importa o controller de autenticação
 const { login } = require('../controllers/authController');
 
@@ -22,4 +22,8 @@ router.get('/secret', authMiddleware, (req, res) => {
   router.get('/admin-only', authMiddleware, requireRole('admin'), (req, res) => {
     res.json({ message: `Olá, Admin ${req.user.name}` });
   });
+  router.post('/forgot-password', forgotPassword);
+  router.post('/reset-password', resetPassword);
+
+
 module.exports = router;

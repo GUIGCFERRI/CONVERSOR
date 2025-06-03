@@ -67,6 +67,9 @@ function Login() {
         >
           Entrar
         </button>
+        <p className="mt-4 text-sm text-center">
+          <a href="/esqueci-senha" className="text-blue-600 hover:underline">Esqueci minha senha</a>
+        </p>
       </form>
     </div>
   );
