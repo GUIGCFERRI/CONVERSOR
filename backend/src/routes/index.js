@@ -5,6 +5,9 @@ const requireRole = require('../middlewares/roleMiddleware');
 const { forgotPassword, resetPassword } = require('../controllers/authController');
 // Importa o controller de autenticação
 const { login } = require('../controllers/authController');
+const userController = require('../controllers/userController');
+
+
 
 // Rota de login
 router.post('/login', login);
@@ -25,5 +28,11 @@ router.get('/secret', authMiddleware, (req, res) => {
   router.post('/forgot-password', forgotPassword);
   router.post('/reset-password', resetPassword);
 
+// Rotas de usuários (admin-only)
+router.get('/users', authMiddleware, requireRole('admin'), userController.getUsers);
+router.post('/users', authMiddleware, requireRole('admin'), userController.createUser);
+router.put('/users/:id', authMiddleware, requireRole('admin'), userController.updateUser);
+router.delete('/users/:id', authMiddleware, requireRole('admin'), userController.deactivateUser);
+router.put('/users/:id/activate', authMiddleware, requireRole('admin'), userController.activateUser);
 
 module.exports = router;
