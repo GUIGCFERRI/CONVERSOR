@@ -1,5 +1,8 @@
 // frontend/src/components/Header.jsx
 import React from "react";
+import {
+  HiUsers,
+} from "react-icons/hi";
 
 const Header = ({ toggleSidebar, pageTitle, onLogout }) => {
   return (
@@ -22,7 +25,14 @@ const Header = ({ toggleSidebar, pageTitle, onLogout }) => {
           className="text-gray-600 hover:text-gray-800 focus:outline-none"
           onClick={onLogout}
         >
-          <span className="material-icons">logout</span>
+          <HiUsers size={22} className="text-gray-300" />
+          <span
+            className={`
+              text-sm font-medium transition-opacity duration-300
+            `}
+          >
+            Sair
+          </span>
         </button>
       </div>
     </header>

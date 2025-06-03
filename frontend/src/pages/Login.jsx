@@ -1,16 +1,17 @@
+// frontend/src/pages/Login.jsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // <— importa o Link
 import api from "../services/api";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [erro, setErro] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [erro, setErro] = useState("");
   const navigate = useNavigate();
 
-   const handleSubmit = async (e) => {
-    e.preventDefault(); // SEM ISSO o form recarrega a página inteira
-    setErro('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErro("");
 
     try {
       const response = await api.post("/login", { email, password });
@@ -20,9 +21,9 @@ function Login() {
         "userProfile",
         JSON.stringify({ role: user.role, name: user.name })
       );
-      navigate("/", { replace: true }); // redireciona para o dashboard
+      navigate("/", { replace: true });
     } catch (err) {
-      setErro(err.response?.data?.error || 'Erro ao fazer login');
+      setErro(err.response?.data?.error || "Erro ao fazer login");
     }
   };
 
@@ -33,16 +34,23 @@ function Login() {
         className="bg-white p-8 rounded shadow-md w-full max-w-md"
       >
         <div className="flex justify-center mb-6">
-          <img src="/logo-zucchetti.png" alt="Logo Zucchetti" className="h-16" />
+          <img
+            src="/logo-zucchetti.png"
+            alt="Logo Zucchetti"
+            className="h-16"
+          />
         </div>
-  
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">Login</h2>
-  
+
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
+          Login
+        </h2>
 
         {erro && <p className="text-red-500 text-sm mb-4">{erro}</p>}
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-medium mb-1">Email</label>
+          <label className="block text-gray-700 text-sm font-medium mb-1">
+            Email
+          </label>
           <input
             type="email"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -53,7 +61,9 @@ function Login() {
         </div>
 
         <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-medium mb-1">Senha</label>
+          <label className="block text-gray-700 text-sm font-medium mb-1">
+            Senha
+          </label>
           <input
             type="password"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -69,8 +79,15 @@ function Login() {
         >
           Entrar
         </button>
+
+        {/* Coloquei o Link fora do botão de submit para não recarregar */}
         <p className="mt-4 text-sm text-center">
-          <a href="/esqueci-senha" className="text-blue-600 hover:underline">Esqueci minha senha</a>
+          <Link
+            to="/forgot-password" /* rota definida no App.js */
+            className="text-blue-600 hover:underline"
+          >
+            Esqueci minha senha
+          </Link>
         </p>
       </form>
     </div>
