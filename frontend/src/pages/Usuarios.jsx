@@ -15,7 +15,7 @@ const Usuarios = () => {
   const [editando, setEditando] = useState(false);
   const [editId, setEditId] = useState(null);
 
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("authToken");
 
   const fetchUsuarios = async () => {
     try {
@@ -24,13 +24,13 @@ const Usuarios = () => {
       });
       setUsuarios(res.data);
     } catch (err) {
-      setErro("Erro ao buscar usuários.");
+      console.error("Erro ao buscar usuários:", err);
     }
   };
 
   useEffect(() => {
     fetchUsuarios();
-  }, []);
+  }, [token]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,13 +38,23 @@ const Usuarios = () => {
     setSucesso("");
 
     try {
+      const payload = {
+        name: form.name,
+        email: form.email,
+        role: form.role,
+        ativo: form.ativo,
+      };
+      if (form.password?.trim()) {
+        payload.password = form.password;
+      }
+
       if (editando) {
-        await api.put(`/users/${editId}`, form, {
+        await api.put(`/users/${editId}`, payload, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSucesso("Usuário atualizado com sucesso!");
       } else {
-        await api.post("/users", form, {
+        await api.post("/users", { ...payload, password: form.password }, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSucesso("Usuário criado com sucesso!");
@@ -55,6 +65,7 @@ const Usuarios = () => {
       setEditId(null);
       fetchUsuarios();
     } catch (err) {
+      console.error("Erro no envio:", err);
       setErro(err.response?.data?.error || "Erro ao salvar usuário.");
     }
   };
@@ -65,9 +76,18 @@ const Usuarios = () => {
       email: user.email,
       password: "",
       role: user.role,
+      ativo: user.ativo,
     });
     setEditando(true);
     setEditId(user.id);
+    setErro("");
+    setSucesso("");
+  };
+
+  const cancelarEdicao = () => {
+    setEditando(false);
+    setEditId(null);
+    setForm({ name: "", email: "", password: "", role: "funcionario" });
     setErro("");
     setSucesso("");
   };
@@ -84,14 +104,6 @@ const Usuarios = () => {
     }
   };
 
-  const cancelarEdicao = () => {
-    setEditando(false);
-    setEditId(null);
-    setForm({ name: "", email: "", password: "", role: "funcionario" });
-    setErro("");
-    setSucesso("");
-  };
-
   const handleAtivar = async (id) => {
     try {
       await api.put(`/users/${id}/activate`, {}, {
@@ -102,16 +114,16 @@ const Usuarios = () => {
       setErro("Erro ao ativar usuário.");
     }
   };
+
   return (
     <div className="max-w-5xl mx-auto p-6">
       <h2 className="text-3xl font-bold mb-6 text-blue-700">Gestão de Usuários</h2>
-  
-      {/* FORMULÁRIO */}
+
       <div className="bg-white rounded-xl shadow-md p-6 mb-8 border">
         <h3 className="text-xl font-semibold mb-4 text-gray-800">
           {editando ? "Editar Usuário" : "Novo Usuário"}
         </h3>
-  
+
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="text"
@@ -147,7 +159,7 @@ const Usuarios = () => {
             <option value="funcionario">Funcionário</option>
             <option value="parceiro">Parceiro</option>
           </select>
-  
+
           <div className="col-span-full flex gap-4 mt-2">
             <button
               type="submit"
@@ -166,12 +178,11 @@ const Usuarios = () => {
             )}
           </div>
         </form>
-  
+
         {sucesso && <p className="text-green-600 mt-3">{sucesso}</p>}
         {erro && <p className="text-red-600 mt-3">{erro}</p>}
       </div>
-  
-      {/* TABELA */}
+
       <div className="overflow-x-auto">
         <table className="w-full border rounded-lg overflow-hidden shadow-sm">
           <thead className="bg-blue-100 text-blue-900 text-left">
@@ -202,7 +213,6 @@ const Usuarios = () => {
                     <Pencil size={16} />
                     Editar
                   </button>
-
                   {user.ativo ? (
                     <button
                       className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded flex items-center gap-1 text-sm"
@@ -221,7 +231,6 @@ const Usuarios = () => {
                     </button>
                   )}
                 </td>
-
               </tr>
             ))}
           </tbody>
@@ -229,7 +238,6 @@ const Usuarios = () => {
       </div>
     </div>
   );
-  
 };
 
 export default Usuarios;

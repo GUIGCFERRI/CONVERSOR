@@ -23,15 +23,28 @@ const createUser = (req, res) => {
 
 // Editar usuário
 const updateUser = (req, res) => {
-  const { name, role, ativo } = req.body;
-  const { id } = req.params;
-
-  const sql = 'UPDATE users SET name = ?, role = ?, ativo = ? WHERE id = ?';
-  db.query(sql, [name, role, ativo, id], (err) => {
-    if (err) return res.status(500).json({ error: 'Erro ao atualizar usuário' });
-    res.json({ message: 'Usuário atualizado com sucesso' });
-  });
-};
+    console.log('updateUser req.body:', req.body);
+    const { name, role, password, ativo } = req.body;
+    const { id } = req.params;
+  
+    // Garante que ativo sempre tenha um valor booleano válido
+    const ativoFinal = typeof ativo === "boolean" ? ativo : true;
+  
+    if (password && password.trim() !== "") {
+      const hashed = bcrypt.hashSync(password, 10);
+      const sql = 'UPDATE users SET name = ?, role = ?, ativo = ?, password = ? WHERE id = ?';
+      db.query(sql, [name, role, ativoFinal, hashed, id], (err) => {
+        if (err) return res.status(500).json({ error: 'Erro ao atualizar usuário (com senha)' });
+        res.json({ message: 'Usuário atualizado com nova senha' });
+      });
+    } else {
+      const sql = 'UPDATE users SET name = ?, role = ?, ativo = ? WHERE id = ?';
+      db.query(sql, [name, role, ativoFinal, id], (err) => {
+        if (err) return res.status(500).json({ error: 'Erro ao atualizar usuário' });
+        res.json({ message: 'Usuário atualizado com sucesso' });
+      });
+    }
+  };
 
 // Remover (desativar) usuário
 const deactivateUser = (req, res) => {
