@@ -14,7 +14,7 @@ const authMiddleware = (req, res, next) => {
     if (err) {
       return res.status(403).json({ error: 'Token inválido ou expirado' });
     }
-    console.log("Token decodificado no authMiddleware:", userData);
+
     req.user = userData; // Ex: { id, email, role }
     next();
   });
