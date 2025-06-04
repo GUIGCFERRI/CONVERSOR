@@ -4,16 +4,30 @@ const bcrypt = require('bcryptjs');
 const db = require('../config/db');
 const { sendRecoveryEmail } = require('../services/emailService');
 
-const login = (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
-  User.findByEmail(email, (err, user) => {
-    if (err) return res.status(500).json({ error: 'Erro no servidor' });
-    if (!user) return res.status(401).json({ error: 'Usuário não encontrado' });
+  // Verifica se veio algo no body
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email e senha são obrigatórios' });
+  }
 
+  try {
+    // Chama a versão async de findByEmail
+    const user = await User.findByEmail(email);
+
+    if (!user) {
+      // usuário não existe
+      return res.status(401).json({ error: 'Usuário não encontrado' });
+    }
+
+    // compara a senha criptografada
     const valid = bcrypt.compareSync(password, user.password);
-    if (!valid) return res.status(401).json({ error: 'Senha inválida' });
+    if (!valid) {
+      return res.status(401).json({ error: 'Senha inválida' });
+    }
 
+    // gera o JWT normalmente
     const token = jwt.sign(
       {
         id: user.id,
@@ -25,17 +39,20 @@ const login = (req, res) => {
       { expiresIn: '1d' }
     );
 
-    res.json({
+    return res.json({
       message: 'Login realizado com sucesso',
       token,
       user: {
         id: user.id,
         name: user.name,
         email: user.email,
-        role: user.role      
+        role: user.role
       }
     });
-  });
+  } catch (err) {
+    console.error('[AuthController.login] erro no servidor:', err);
+    return res.status(500).json({ error: 'Erro no servidor' });
+  }
 };
 
 const crypto = require('crypto');

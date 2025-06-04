@@ -7,10 +7,10 @@ import ResetPassword from "./pages/ResetPassword";
 
 import DashboardHome from "./pages/DashboardHome";
 import Conversoes    from "./pages/Conversoes";
+import FilaConversoes from "./pages/FilaConversoes";
 import Relatorios    from "./pages/Relatorios";
 import Usuarios      from "./pages/Usuarios";
 import Configuracoes from "./pages/Configuracoes";
-import FilaConversoes from "./pages/FilaConversoes";
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("authToken");
@@ -36,10 +36,10 @@ function App() {
                 <Routes>
                   <Route path="/" element={<DashboardHome />} />
                   <Route path="/conversoes" element={<Conversoes />} />
+                  <Route path="/fila" element={<FilaConversoes />} />
                   <Route path="/relatorios" element={<Relatorios />} />
                   <Route path="/usuarios" element={<Usuarios />} />
                   <Route path="/configuracoes" element={<Configuracoes />} />
-                  <Route path="/fila" element={<FilaConversoes />} />
                   <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
               </Layout>
