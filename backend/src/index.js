@@ -34,3 +34,5 @@ const PORT = process.env.PORT || 3001; // exemplo usando 3001
 app.listen(PORT, () => {
   console.log(`Servidor Express rodando em http://localhost:${PORT}`);
 });
+const sistemasRouter = require("./routes/sistemas");
+app.use("/api/sistemas", sistemasRouter);
