@@ -24,7 +24,7 @@ function App() {
         {/* Rotas públicas (sem Layout) */}
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/resetar-senha" element={<ResetPassword />} />
 
         {/* Rotas protegidas, sempre dentro do Layout */}
         <Route

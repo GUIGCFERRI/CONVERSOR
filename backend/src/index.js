@@ -18,11 +18,8 @@ const routes = require("./routes");
 // E, especificamente, as rotas de Configurações:
 const configuracoesRouter = require("./routes/configuracoes");
 
-
-
 // Torna público qualquer arquivo em backend/src/uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
 
 app.use(cors());
 app.use(express.json());

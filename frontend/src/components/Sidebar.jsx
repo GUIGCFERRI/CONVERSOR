@@ -16,9 +16,9 @@ const menuItems = [
   { to: "/", label: "Dashboard", icon: HiViewGrid, end: true },
   { to: "/conversoes", label: "Gestão de Conversões", icon: HiSwitchHorizontal },
   { to: "/fila", label: "Fila de Conversões", icon: HiExclamationCircle },
-  { to: "/relatorios", label: "Relatórios", icon: HiChartBar },
+  { to: "/relatorios", label: "Relatórios", icon: HiChartBar, protected: "admin" },
   { to: "/usuarios", label: "Usuários", icon: HiUsers, protected: "admin" },
-  { to: "/configuracoes", label: "Configurações", icon: HiCog },
+  { to: "/configuracoes", label: "Configurações", icon: HiCog, protected: "admin" },
 ];
 
 const Sidebar = ({ isOpen, toggleSidebar, userRole }) => {
