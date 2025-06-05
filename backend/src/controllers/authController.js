@@ -10,9 +10,14 @@ const login = (req, res) => {
   User.findByEmail(email, (err, user) => {
     if (err) return res.status(500).json({ error: 'Erro no servidor' });
     if (!user) return res.status(401).json({ error: 'Usuário não encontrado' });
-
+  
+    if (!user.ativo) {
+      return res.status(403).json({ error: 'Usuário inativo. Entre em contato com o administrador.' });
+    }
+  
     const valid = bcrypt.compareSync(password, user.password);
     if (!valid) return res.status(401).json({ error: 'Senha inválida' });
+  
 
     const token = jwt.sign(
       {

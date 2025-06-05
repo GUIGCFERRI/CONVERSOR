@@ -45,7 +45,11 @@ function Login() {
           Login
         </h2>
 
-        {erro && <p className="text-red-500 text-sm mb-4">{erro}</p>}
+        {erro && (
+          <div className="bg-red-100 text-red-700 px-4 py-2 rounded mb-4 text-sm border border-red-300">
+            {erro}
+          </div>
+        )}
 
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-medium mb-1">
